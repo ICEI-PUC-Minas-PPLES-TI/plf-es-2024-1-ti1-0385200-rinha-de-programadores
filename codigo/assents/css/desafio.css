@@ -1,6 +1,6 @@
 body {
-    background-color: #000;
-    color: #0f0;
+    background-color: #121212;
+    color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -8,6 +8,7 @@ h1 {
     text-align: center;
     margin: 20px 0;
     font-size: 2.5rem;
+    color: #ffffff;
 }
 
 h1 img {
@@ -16,41 +17,74 @@ h1 img {
 }
 
 .container {
-    background-color: #111;
+    background-color: #1e1e1e;
     padding: 20px;
     border-radius: 8px;
 }
 
 .form-control, .btn, .table {
-    background-color: #222;
-    color: #0f0;
-    border: 1px solid #0f0;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: 1px solid #4caf50;
 }
 
 .form-control:focus, .btn:focus, .table:focus {
-    background-color: #333;
-    color: #0f0;
+    background-color: #3a3a3a;
+    color: #ffffff;
 }
 
 .btn-warning {
-    color: #000;
-    background-color: #0f0;
-    border-color: #0f0;
+    color: #ffffff;
+    background-color: #4caf50;
+    border-color: #4caf50;
 }
 
 .btn-warning:hover {
-    background-color: #0b0;
-    border-color: #0b0;
+    background-color: #45a049;
+    border-color: #45a049;
 }
 
 .table thead {
-    background-color: #333;
+    background-color: #3a3a3a;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: #222;
+    background-color: #2c2c2c;
 }
 
 .table-striped tbody tr:nth-of-type(even) {
-    background-color: #111;
+    background-color: #1e1e1e;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border: none;
+    color: #ffffff;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    color: #4caf50;
+}
+
+.card-subtitle {
+    color: #b0bec5;
+}
+
+.card-text {
+    color: #e0e0e0;
+}
+
+.btn-hacker {
+    color: #ffffff;
+    background-color: #4caf50;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hacker:hover {
+    background-color: #45a049;
 }
