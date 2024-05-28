@@ -96,21 +96,21 @@ button {
 }
 
 #clip {
-    --color: #2761c3;
+    --color: #198066;
     position: absolute;
     top: 0;
     overflow: hidden;
     width: 100%;
     height: 100%;
     border: 5px double var(--color);
-    box-shadow: inset 0px 0px 15px #195480;
+    box-shadow: inset 0px 0px 15px #198066;
     -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
 .arrow {
     position: absolute;
     transition: 0.2s;
-    background-color: #2761c3;
+    background-color: #198066;
     top: 35%;
     width: 11%;
     height: 30%;
@@ -142,7 +142,7 @@ button:hover #leftArrow {
     position: absolute;
     width: 4em;
     height: 4em;
-    background-color: #2761c3;
+    background-color: #198066;
     box-shadow: inset 1px 1px 8px #2781c3;
     transform: scale(1) rotate(45deg);
     transition: 0.2s;
