@@ -7,15 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro de Desafios</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="../assents/css/vitorC.css">   
     <link rel="stylesheet" href="../assents/css/desafio.css"> 
-
-   
 </head>
 
 <body>
-    <h1> Desafios <img src="../assents/images/logo (2).svg" alt="Logo"></h1>
+    <h1>Desafios <img src="../assets/images/logo (2).svg" alt="Logo"></h1>
 
     <div class="container">
         <div class="row">
@@ -40,30 +37,12 @@
             </div>
         </form>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <table id="grid-contatos" class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nome</th>
-                            <th scope="col">Linguagem</th>
-                            <th scope="col">Descrição</th>
-                            <th scope="col">Dificuldade</th>
-                            <th scope="col">Exemplo</th>
-                            <th scope="col">Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-contatos">
-                    </tbody>
-                </table>
-            </div>
+        <div class="row" id="cards-contatos">
+            <!-- Os cards serão inseridos aqui pelo JavaScript -->
         </div>
     </div>
 
-
     <script src="../assents/js/app.js"></script>
-
     <script>
         // carrega os dados a partir da API JSONServer
         var db = [];
@@ -72,31 +51,49 @@
             ListaContatos();
         });
 
-        // função para listar na tabela os contatos que estão associados aos filtros 
+        // função para listar os contatos em cards
         function ListaContatos() {
             // Obtem os dados informados pelo usuário nos filtros
             let fc = document.getElementById('filtro_cidade').value;
 
             // limpa a lista de contatos apresentados
-            let tableContatos = document.getElementById("table-contatos");
-            tableContatos.innerHTML = "";
+            let cardsContatos = document.getElementById("cards-contatos");
+            cardsContatos.innerHTML = "";
 
-            // Popula a tabela com os registros do banco de dados
+            // Popula os cards com os registros do banco de dados
             for (let index = 0; index < db.length; index++) {
                 const contato = db[index];
 
                 // Verifica se os dados do contato batem com os filtros
                 if ((contato.dificuldade == fc) || (fc == '')) {
-                    // Inclui o contato na tabela    
-                    tableContatos.innerHTML += `<tr>
-                        <td scope="row">${contato.id}</td>
-                        <td>${contato.titulo}</td>
-                        <td>${contato.linguagem}</td>
-                        <td>${contato.comando}</td>
-                        <td>${contato.dificuldade}</td>
-                        <td>${contato.exemplo}</td>
-                        <td><button class="btn btn-hacker" onclick="FazerDesafio(${contato.id})">Fazer</button></td>
-                    </tr>`;
+                    // Cria o card do contato
+                    let card = document.createElement('div');
+                    card.className = 'col-sm-4 mb-4';
+                    card.innerHTML = `
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${contato.titulo}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">${contato.linguagem}</h6>
+                                <p class="card-text">${contato.comando}</p>
+                                <p class="card-text"><strong>Dificuldade:</strong> ${contato.dificuldade}</p>
+                                <p class="card-text"><strong>Exemplo:</strong> ${contato.exemplo}</p>
+                                <a href="#">
+                                <button>
+                                P L A Y
+                                <div id="clip">
+                                <div id="leftTop" class="corner"></div>
+                                <div id="rightBottom" class="corner"></div>
+                               <div id="rightTop" class="corner"></div>
+                                <div id="leftBottom" class="corner"></div>
+                                </div>
+                                <span id="rightArrow" class="arrow"></span>
+                                 <span id="leftArrow" class="arrow"></span>
+                                </button>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    cardsContatos.appendChild(card);
                 }
             }
         }
