@@ -1,7 +1,7 @@
 <body>
   <header>
       <div class="logo">CODECLASH <img src="../assents/images/LogoCodeClash.jpeg" alt="Logo CodeClash"></div>
-      <input type="text" class="search-bar" placeholder="Pesquisar...">
+      <div class="butaologin">  <button type="button" class="botao-verde">Cadastro/Login</button> </div>
       <link href="../assents/css/style_homepage.css" rel="stylesheet">
   </header>
     <aside>
@@ -22,22 +22,59 @@
 
 <main>
     <div class="Conteudo_principal">
-    <h1>Bem-vindo ao CodeClash!</h1>
-    <h3>
-      <p>  A plataforma definitiva para desafiar e aprimorar suas habilidades de programação. No CodeClash, incentivamos o desenvolvimento contínuo através da criação e resolução de desafios de programação, proporcionando uma experiência enriquecedora e educativa para todos os níveis de habilidade.</p>
 
-        <p>Nossa missão é fomentar um ambiente onde programadores possam se testar e aprender uns com os outros. Ao criar desafios, você incentiva o raciocínio lógico, a criatividade e a capacidade de resolver problemas de outros desenvolvedores. Ao aceitar desafios, você coloca suas habilidades à prova e descobre novas abordagens e soluções inovadoras.</p>
-
-        <p>No CodeClash, acreditamos que a prática constante e a troca de conhecimento são essenciais para o crescimento profissional. Seja você um iniciante buscando aprender os fundamentos ou um programador experiente querendo se manter afiado e atualizado, nossa plataforma oferece as ferramentas e a comunidade necessárias para alcançar seus objetivos.</p>
-
-        <p>Junte-se a nós no CodeClash e eleve suas capacidades de programação a um novo patamar. Aceite o desafio, contribua com sua expertise e faça parte de uma comunidade comprometida com a excelência e o desenvolvimento contínuo.</p>
-
-        </h3>
+      <div class="card" id="card1">
+        <div class="card-border-top">
         </div>
+        <div class="img">
+        </div>
+        <span> Html/Css/Js</span>
+        <p class="job">Facil</p>
+        <button> Escolher Desafio </button>
+      </div>
+
+        <div class="card" id="card2">
+          <div class="card-border-top">
+          </div>
+          <div class="img">
+          </div>
+          <span> C</span>
+          <p class="job"> Medio</p>
+          <button> Escolher Desafio
+          </button>
+        </div>
+
+          <div class="card" id="card3">
+            <div class="card-border-top">
+            </div>
+            <div class="img">
+            </div>
+            <span> C++ </span>
+            <p class="job"> Dificil</p>
+            <button> Escolher Desafio </button>
+          </div>
+
+      <div class="carousel-container">
+          <div class="carousel">
+              <div class="carousel-slide">
+                  <img src="img1.jpg" alt="Image 1">
+              </div>
+              <div class="carousel-slide">
+                  <img src="img2.jpg" alt="Image 2">
+              </div>
+              <div class="carousel-slide">
+                  <img src="img3.jpg" alt="Image 3">
+              </div>
+          </div>
+          <button class="prev" onclick="prevSlide()">&#10094;</button>
+          <button class="next" onclick="nextSlide()">&#10095;</button>
+      </div>
 </main>
    
   <footer>
     <p>&copy; 2024 Codeclash</p>
   </footer>
+
+  <script src="../assents/js/homepage.js"></script>
 </body>
 </html>
