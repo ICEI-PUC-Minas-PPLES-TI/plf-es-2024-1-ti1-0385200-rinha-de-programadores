@@ -1,7 +1,7 @@
 
 img{
-  width: 5%;
-  height: 2%;
+  width: 4%;
+  height: 3%;
    object-fit: cover;
   border-radius: 50%;
    overflow: hidden;
@@ -26,10 +26,12 @@ header {
 }
 
 .logo {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: bold;
   text-decoration: none;
-}
+  }
+
+  
 
 .botao-verde {
   background-color: #3e8e41; /* Fundo verde */
@@ -79,17 +81,23 @@ main {
 }
 
 
-
+.card-conteiner{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
 .card {
-  width: 190px;
+  width: 250px;
   height: 254px;
-  background-image: linear-gradient(144deg,#3e8e3e, #25771f 60%,#000000);
+  background-image: linear-gradient(144deg,#000000c1, #25771f 60%,#000000);
   border: none;
   border-radius: 10px;
   padding-top: 10px;
   margin: auto;
   font-family: inherit;
+  text-align: center;
+ 
 }
 
 .card span {
@@ -110,13 +118,8 @@ main {
   font-size: 1em;
 }
 
-.card .img {
-  width: 70px;
-  height: 70px;
-  background: #e8e8e8;
-  border-radius: 100%;
-  margin: auto;
-  margin-top: 20px;
+.card .icones-card i {
+  font-size: 2em;
 }
 
 .card button {
@@ -135,10 +138,6 @@ main {
   background: #212121;
   color: #ffffff;
 }
-
-
-
-
 
 
 .carousel-container {
@@ -190,6 +189,12 @@ main {
   background-color: rgba(0,0,0,0.8);
 }
 
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 a:link {
   color: ghostwhite;
   background-color: transparent;
@@ -215,6 +220,7 @@ footer {
   padding: 20px;
   background-color: #222; 
   color: white; 
+  text-align: center;
 }
 
 

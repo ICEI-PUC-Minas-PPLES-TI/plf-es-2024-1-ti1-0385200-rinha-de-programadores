@@ -1,34 +1,39 @@
 <body>
   <header>
-      <div class="logo">CODECLASH <img src="../assents/images/LogoCodeClash.jpeg" alt="Logo CodeClash"></div>
-      <div class="butaologin">  <button type="button" class="botao-verde">Cadastro/Login</button> </div>
+      <div class="logo" id="logo-escrito">CODECLASH <img src="../assents/images/LogoCodeClash.jpeg" alt="Logo CodeClash"></div>
+      <div class="butaologin">  <button type="button" class="botao-verde">Cadastro/Login <i class="fa-solid fa-arrow-right"></i></button> </div>
       <link href="../assents/css/style_homepage.css" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/a2fceb8262.js" crossorigin="anonymous"></script>
   </header>
     <aside>
   <nav>
       <ul>
-          <li><a href="url">Desafios</a></li>
-          <br><br>
-          <li><a href="url">Histórico</a></li>
-          <br><br>
-          <li><a href="url">Recentes</a></li>
-          <br><br>
-          <li><a href="url">Favoritos</a></li>
-          <br><br>
-          <li><a href="url">Tutoriais</a></li>
+          <li><a href="../pages/desafios.html">Desafios <i class="fa-solid fa-code"></i></a></li>
+          <br>
+          <li><a href="url">Quiz <i class="fa-solid fa-cubes"></i></a></li>
+          <br>
+          <li><a href="url">Recentes <i class="fa-solid fa-left-long"></i></a></li>
+          <br>
+          <li><a href="url">Favoritos <i class="fa-solid fa-star"></i></a></li>
+          <br>
+          <li><a href="url">Tutoriais <i class="fa-solid fa-handshake-angle"></i></a></li>
       </ul>
   </nav>
         </aside>
 
 <main>
     <div class="Conteudo_principal">
+      <h3>Desafios recomendados: </h3>
+
+      <div class="card-conteiner">
 
       <div class="card" id="card1">
         <div class="card-border-top">
         </div>
-        <div class="img">
+        <div class="icones-card">
+          <i class="fa-brands fa-js"></i>
         </div>
-        <span> Html/Css/Js</span>
+        <span> JavaScript</span>
         <p class="job">Facil</p>
         <button> Escolher Desafio </button>
       </div>
@@ -36,7 +41,8 @@
         <div class="card" id="card2">
           <div class="card-border-top">
           </div>
-          <div class="img">
+          <div class="icones-card">
+            <i class="fa-solid fa-c"></i>
           </div>
           <span> C</span>
           <p class="job"> Medio</p>
@@ -47,23 +53,40 @@
           <div class="card" id="card3">
             <div class="card-border-top">
             </div>
-            <div class="img">
+            <div class="icones-card">
+              <i class="fa-brands fa-java"></i>
             </div>
-            <span> C++ </span>
+            <span>Java</span>
             <p class="job"> Dificil</p>
             <button> Escolher Desafio </button>
           </div>
 
+        </div>
+
+
+        <br>
+
+
       <div class="carousel-container">
           <div class="carousel">
               <div class="carousel-slide">
-                  <img src="img1.jpg" alt="Image 1">
+                <div class="video-container">
+                  
+                  <video autoplay loop muted src="../assents/videos/Banner cadastrologin.mp4  " type="banner-desafios"></video>
+                </div>
+           
+                  </div>
+              <div class="carousel-slide">
+                  <div class="video-container">
+                    <video autoplay loop muted src="../assents/videos/Banner Desafios.mp4" type="banner-desafios"></video>
+                   </div>
               </div>
               <div class="carousel-slide">
-                  <img src="img2.jpg" alt="Image 2">
-              </div>
-              <div class="carousel-slide">
-                  <img src="img3.jpg" alt="Image 3">
+                <div class="video-container">
+                  <video autoplay loop muted src="../assents/videos/Banner tutoriais.mp4" type="banner-tutorial"></video>
+                  
+                 </div>
+            
               </div>
           </div>
           <button class="prev" onclick="prevSlide()">&#10094;</button>
