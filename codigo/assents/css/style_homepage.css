@@ -1,15 +1,14 @@
 
 img{
-  width: 4%;
-  height: 3%;
+  width: 3%;
    object-fit: cover;
-  border-radius: 50%;
+  border-radius: 20%;
    overflow: hidden;
 }
 /* Estilos gerais */
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+body { 
+  font-family: 'Courier New', Courier, monospace;
   background-color: #1a1a1a;
   color: #ffffff;
   margin: 0;
@@ -26,17 +25,19 @@ header {
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-decoration: none;
   }
 
-  
+  a{
+    color: white;
+  }
 
 .botao-verde {
   background-color: #3e8e41; /* Fundo verde */
   border: none; /* Remover borda */
-  color: black; /* Texto branco */
+  color: white; /* Texto branco */
   padding: 15px 32px; /* Espaçamento interno */
   text-align: center; /* Centralizar texto */
   text-decoration: none; /* Remover sublinhado */
@@ -60,8 +61,8 @@ nav {
   display: flex;
   left: 0;
   width: 100%;
-  height: 100%;
-  font-size: 30px;
+  height: 96.00000000005%;
+  font-size: 25px;
 }
 
 nav ul {
@@ -221,6 +222,7 @@ footer {
   background-color: #222; 
   color: white; 
   text-align: center;
+  font-size: 30px;
 }
 
 

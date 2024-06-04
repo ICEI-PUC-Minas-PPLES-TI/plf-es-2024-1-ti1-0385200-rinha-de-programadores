@@ -1,7 +1,11 @@
 <body>
   <header>
-      <div class="logo" id="logo-escrito">CODECLASH <img src="../assents/images/LogoCodeClash.jpeg" alt="Logo CodeClash"></div>
-      <div class="butaologin">  <button type="button" class="botao-verde">Cadastro/Login <i class="fa-solid fa-arrow-right"></i></button> </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homepage</title>
+      <div class="logo" id="logo-escrito"><a href="../pages/index_homepage.html"> CODECLASH  <img src="../assents/images/LogoCodeClash.jpeg" alt="Logo CodeClash"> </a></div>
+      <div class="butaologin">  <a href="../pages/cadastro.html"> <button type="button" class="botao-verde">cadastro/Login <i class="fa-solid fa-arrow-right"></i></button></a> </div>
       <link href="../assents/css/style_homepage.css" rel="stylesheet">
       <script src="https://kit.fontawesome.com/a2fceb8262.js" crossorigin="anonymous"></script>
   </header>
@@ -10,13 +14,13 @@
       <ul>
           <li><a href="../pages/desafios.html">Desafios <i class="fa-solid fa-code"></i></a></li>
           <br>
-          <li><a href="url">Quiz <i class="fa-solid fa-cubes"></i></a></li>
+          <li><a href="../pages/">Quiz <i class="fa-solid fa-cubes"></i></a></li>
           <br>
-          <li><a href="url">Recentes <i class="fa-solid fa-left-long"></i></a></li>
+          <li><a href="../">Recentes <i class="fa-solid fa-left-long"></i></a></li>
           <br>
-          <li><a href="url">Favoritos <i class="fa-solid fa-star"></i></a></li>
+          <li><a href="">Favoritos <i class="fa-solid fa-star"></i></a></li>
           <br>
-          <li><a href="url">Tutoriais <i class="fa-solid fa-handshake-angle"></i></a></li>
+          <li><a href="">Tutoriais <i class="fa-solid fa-handshake-angle"></i></a></li>
       </ul>
   </nav>
         </aside>
@@ -72,20 +76,24 @@
           <div class="carousel">
               <div class="carousel-slide">
                 <div class="video-container">
-                  
+                  <a href="../pages/cadastro.html">
                   <video autoplay loop muted src="../assents/videos/Banner cadastrologin.mp4  " type="banner-desafios"></video>
+                </a>
                 </div>
            
                   </div>
               <div class="carousel-slide">
                   <div class="video-container">
+                    <a href="../pages/desafios.html">
                     <video autoplay loop muted src="../assents/videos/Banner Desafios.mp4" type="banner-desafios"></video>
-                   </div>
+                  </a> 
+                  </div>
               </div>
               <div class="carousel-slide">
                 <div class="video-container">
+                  <a href="">
                   <video autoplay loop muted src="../assents/videos/Banner tutoriais.mp4" type="banner-tutorial"></video>
-                  
+                </a>
                  </div>
             
               </div>
@@ -93,10 +101,11 @@
           <button class="prev" onclick="prevSlide()">&#10094;</button>
           <button class="next" onclick="nextSlide()">&#10095;</button>
       </div>
+
 </main>
    
   <footer>
-    <p>&copy; 2024 Codeclash</p>
+    <p><u>&copy; 2024 Codeclash</u></p>
   </footer>
 
   <script src="../assents/js/homepage.js"></script>
