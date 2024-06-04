@@ -1,43 +1,113 @@
 <body>
   <header>
-      <div class="logo">CODECLASH <img src="../assents/images/LogoCodeClash.jpeg" alt="Logo CodeClash"></div>
-      <input type="text" class="search-bar" placeholder="Pesquisar...">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homepage</title>
+      <div class="logo" id="logo-escrito"><a href="../pages/index_homepage.html"> CODECLASH  <img src="../assents/images/LogoCodeClash.jpeg" alt="Logo CodeClash"> </a></div>
+      <div class="butaologin">  <a href="../pages/cadastro.html"> <button type="button" class="botao-verde">cadastro/Login <i class="fa-solid fa-arrow-right"></i></button></a> </div>
       <link href="../assents/css/style_homepage.css" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/a2fceb8262.js" crossorigin="anonymous"></script>
   </header>
     <aside>
   <nav>
       <ul>
-          <li><a href="url">Desafios</a></li>
-          <br><br>
-          <li><a href="url">Histórico</a></li>
-          <br><br>
-          <li><a href="url">Recentes</a></li>
-          <br><br>
-          <li><a href="url">Favoritos</a></li>
-          <br><br>
-          <li><a href="url">Tutoriais</a></li>
+          <li><a href="../pages/desafios.html">Desafios <i class="fa-solid fa-code"></i></a></li>
+          <br>
+          <li><a href="../pages/">Quiz <i class="fa-solid fa-cubes"></i></a></li>
+          <br>
+          <li><a href="../">Recentes <i class="fa-solid fa-left-long"></i></a></li>
+          <br>
+          <li><a href="">Favoritos <i class="fa-solid fa-star"></i></a></li>
+          <br>
+          <li><a href="">Tutoriais <i class="fa-solid fa-handshake-angle"></i></a></li>
       </ul>
   </nav>
         </aside>
 
 <main>
+  
     <div class="Conteudo_principal">
-    <h1>Bem-vindo ao CodeClash!</h1>
-    <h3>
-      <p>  A plataforma definitiva para desafiar e aprimorar suas habilidades de programação. No CodeClash, incentivamos o desenvolvimento contínuo através da criação e resolução de desafios de programação, proporcionando uma experiência enriquecedora e educativa para todos os níveis de habilidade.</p>
+      <h3>Desafios recomendados: </h3>
 
-        <p>Nossa missão é fomentar um ambiente onde programadores possam se testar e aprender uns com os outros. Ao criar desafios, você incentiva o raciocínio lógico, a criatividade e a capacidade de resolver problemas de outros desenvolvedores. Ao aceitar desafios, você coloca suas habilidades à prova e descobre novas abordagens e soluções inovadoras.</p>
+      <div class="card-conteiner">
 
-        <p>No CodeClash, acreditamos que a prática constante e a troca de conhecimento são essenciais para o crescimento profissional. Seja você um iniciante buscando aprender os fundamentos ou um programador experiente querendo se manter afiado e atualizado, nossa plataforma oferece as ferramentas e a comunidade necessárias para alcançar seus objetivos.</p>
-
-        <p>Junte-se a nós no CodeClash e eleve suas capacidades de programação a um novo patamar. Aceite o desafio, contribua com sua expertise e faça parte de uma comunidade comprometida com a excelência e o desenvolvimento contínuo.</p>
-
-        </h3>
+      <div class="card" id="card1">
+        <div class="card-border-top">
         </div>
+        <div class="icones-card">
+          <i class="fa-brands fa-js"></i>
+        </div>
+        <span> JavaScript</span>
+        <p class="job">Facil</p>
+        <button> Escolher Desafio </button>
+      </div>
+
+        <div class="card" id="card2">
+          <div class="card-border-top">
+          </div>
+          <div class="icones-card">
+            <i class="fa-solid fa-c"></i>
+          </div>
+          <span> C</span>
+          <p class="job"> Medio</p>
+          <button> Escolher Desafio
+          </button>
+        </div>
+
+          <div class="card" id="card3">
+            <div class="card-border-top">
+            </div>
+            <div class="icones-card">
+              <i class="fa-brands fa-java"></i>
+            </div>
+            <span>Java</span>
+            <p class="job"> Dificil</p>
+            <button> Escolher Desafio </button>
+          </div>
+
+        </div>
+
+
+        <br>
+
+
+      <div class="carousel-container">
+          <div class="carousel">
+              <div class="carousel-slide">
+                <div class="video-container">
+                  <a href="../pages/cadastro.html">
+                  <video autoplay loop muted src="../assents/videos/Banner cadastrologin.mp4  " type="banner-desafios"></video>
+                </a>
+                </div>
+           
+                  </div>
+              <div class="carousel-slide">
+                  <div class="video-container">
+                    <a href="../pages/desafios.html">
+                    <video autoplay loop muted src="../assents/videos/Banner Desafios.mp4" type="banner-desafios"></video>
+                  </a> 
+                  </div>
+              </div>
+              <div class="carousel-slide">
+                <div class="video-container">
+                  <a href="">
+                  <video autoplay loop muted src="../assents/videos/Banner tutoriais.mp4" type="banner-tutorial"></video>
+                </a>
+                 </div>
+            
+              </div>
+          </div>
+          <button class="prev" onclick="prevSlide()">&#10094;</button>
+          <button class="next" onclick="nextSlide()">&#10095;</button>
+      </div>
+
 </main>
    
   <footer>
-    <p>&copy; 2024 Codeclash</p>
+    <p><u>&copy; 2024 Codeclash</u></p>
   </footer>
+
+  <script src="../assents/js/homepage.js"></script>
 </body>
 </html>

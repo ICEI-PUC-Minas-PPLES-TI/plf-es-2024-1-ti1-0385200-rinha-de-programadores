@@ -1,16 +1,15 @@
 
 img{
-  width: 5%;
-  height: 2%;
+  width: 3%;
    object-fit: cover;
-  border-radius: 50%;
+  border-radius: 20%;
    overflow: hidden;
 }
 /* Estilos gerais */
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #1a1a1a;
+body { 
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #121212;
   color: #ffffff;
   margin: 0;
   padding: 0;
@@ -22,33 +21,48 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #333;
+  background-color: #3a3a3a;
 }
 
 .logo {
-  font-size: 5rem;
+  font-size: 2.5rem;
   font-weight: bold;
   text-decoration: none;
+  }
+
+  a{
+    color: #ffffff;
+  }
+
+.botao-verde {
+  background-color: #4caf50; /* Fundo verde */
+  border: none; /* Remover borda */
+  color: #ffffff; /* Texto branco */
+  padding: 15px 32px; /* Espaçamento interno */
+  text-align: center; /* Centralizar texto */
+  text-decoration: none; /* Remover sublinhado */
+  display: inline-block; /* Exibição inline */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de pointer */
+  border-radius: 12px; /* Borda arredondada */
+
 }
 
-.search-bar {
-  width: 200px;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 4px;
-  
+.butaologin:hover {
+  border-radius: 12px;
+  background-color: #4caf50;
 }
 
 /* Menu lateral */
 nav {
-  background-color: #333;
+  background-color: #3a3a3a;
   padding: 1rem;
   justify-content: left;
   display: flex;
   left: 0;
   width: 100%;
-  height: 100%;
-  font-size: 30px;
+  height: 96.00000000005%;
+  font-size: 25px;
 }
 
 nav ul {
@@ -63,12 +77,127 @@ nav li {
 /* Conteúdo principal */
 main {
   padding: 1rem;
-  color: lightgreen;
+  color: #4caf50;
   margin-left: 2%;
 }
 
+
+.card-conteiner{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  height: 254px;
+  background-image: linear-gradient(144deg,#000000c1, #4caf50 60%,#000000);
+  border: none;
+  border-radius: 10px;
+  padding-top: 10px;
+  margin: auto;
+  font-family: inherit;
+  text-align: center;
+ 
+}
+
+.card span {
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  padding-top: 10px;
+  font-size: 1.3em;
+}
+
+.card .job {
+  font-weight: 400;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 1em;
+}
+
+.card .icones-card i {
+  font-size: 2em;
+}
+
+.card button {
+  padding: 8px 25px;
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+  border: none;
+  margin-top: 30px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 600;
+}
+
+.card button:hover {
+  background: #212121;
+  color: #ffffff;
+}
+
+
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 a:link {
-  color: ghostwhite;
+  color: #ffffff;
   background-color: transparent;
   text-decoration: none;
   
@@ -92,4 +221,9 @@ footer {
   padding: 20px;
   background-color: #222; 
   color: white; 
+  text-align: center;
+  font-size: 30px;
 }
+
+
+
