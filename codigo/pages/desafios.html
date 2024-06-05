@@ -89,7 +89,8 @@
                                 <span id="rightArrow" class="arrow"></span>
                                  <span id="leftArrow" class="arrow"></span>
                                 </button>
-                                </a>
+                                </a>  
+                                <button id="favoritar-${contato.id}" onclick="toggleFavorite(${contato.id})" class="btn star-btn"><i class="fas fa-star"></i> Favoritar</button>
                             </div>
                         </div>
                     `;
@@ -97,6 +98,120 @@
                 }
             }
         }
+
+        
+
+
+// Função para favoritar ou desfavoritar um desafio
+function toggleFavorite(id) {
+  const contato = db.find(c => c.id === id);
+  if (contato) {
+    // Obtem os favoritos armazenados no localStorage
+    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+    // Verifica se o contato já está nos favoritos
+    const existeNoFavoritos = favoritos.some(f => f.id === id);
+    if (existeNoFavoritos) {
+      // Remove o contato dos favoritos
+      favoritos = favoritos.filter(f => f.id !== id);
+      localStorage.setItem('favoritos', JSON.stringify(favoritos));
+      alert(`O desafio ${contato.titulo} foi removido dos favoritos!`);
+      // Atualiza o texto do botão para "Favoritar"
+      const botao = document.getElementById(`favoritar-${id}`);
+      if (botao) {
+        botao.textContent = 'Favoritar';
+        botao.classList.remove('btn-danger'); // Remove a classe de estilo vermelho
+        botao.classList.add('btn-primary'); // Adiciona a classe de estilo azul
+      }
+    } else {
+      // Adiciona o contato aos favoritos
+      favoritos.push(contato);
+      localStorage.setItem('favoritos', JSON.stringify(favoritos));
+      alert(`O desafio ${contato.titulo} foi adicionado aos favoritos!`);
+      // Atualiza o texto do botão para "Desfavoritar"
+      const botao = document.getElementById(`favoritar-${id}`);
+      if (botao) {
+        botao.textContent = 'Desfavoritar';
+        botao.classList.remove('btn-primary'); // Remove a classe de estilo azul
+        botao.classList.add('btn-danger'); // Adiciona a classe de estilo vermelho
+      }
+    }
+  }
+}
+
+    function readContato(callback) {
+      // Substitua pelo código para obter os dados reais da sua API JSONServer
+      const dados = 
+      [
+  {
+    "titulo": "Desafio 1",
+    "linguagem": "C",
+    "comando": "Fazer um algoritmo que leia um número inteiro e mostre uma mensagem indicando se este número e par ou ímpar.",
+    "dificuldade": "Fácil",
+    "exemplo": "input 4 out Par",
+    "id": 1
+  },
+  {
+    "titulo": "Desafio 2",
+    "linguagem": "Java",
+    "comando": "Números palíndromos são aqueles que escritos da direita para esquerda ou da esquerda para direita tem o mesmo valor. Exemplo:929, 44, 97379. Fazer um algoritmo que dado um número de 5 dígitos; calcule e escreva se este e ou não palíndromo.",
+    "dificuldade": "Fácil",
+    "exemplo": "Input: 929 Output : é palíndromo",
+    "id": 2
+  },
+  {
+    "titulo": "Desafio 3",
+    "linguagem": "Python",
+    "comando": "Escreva uma função para encontrar a string de prefixo comum mais longa entre uma matriz de strings.  Se não houver um prefixo comum, retorne uma string vazia \"\".",
+    "dificuldade": "Fácil",
+    "exemplo": "Input: str = [\"Flower\",\"Flow\",\"Flight\"] Output: \"Fl\"l\"",
+    "id": 3
+  },
+  {
+    "titulo": "Desafio 4",
+    "linguagem": "C",
+    "comando": "Construa um algoritmo que receba como entrada três valores (A,B e C). Após o processamento o menor valor deverá estar em A e o maior valor em C, e o valor intermediário em B. Imprima A,B e C.",
+    "dificuldade": "Médio",
+    "exemplo": "Input:  A=7 , B=3 , C=5 Output: A=3 , B=5 ,B=7",
+    "id": 4
+  },
+  {
+    "titulo": "Desafio 5",
+    "linguagem": "Java",
+    "comando": "Faça um programa para um jogo de cara ou coroa. Neste caso, o jogador escolhe cara ou coroa (0 – cara e 1 – para coroa) mostre ao final de 10 tentativas, quantas foram certas e quantas erradas. (utilize o comando - para que o computador escolha o resultado)",
+    "dificuldade": "Médio",
+    "exemplo": "Input: jogador escolheu CARA Output: Jogador ganhou ou Jogador perdeu",
+    "id": 5
+  },
+  {
+    "titulo": "Desafio 6",
+    "linguagem": "Python",
+    "comando": "Dada uma lista de números inteiros não negativos, organize-os de forma que formem o maior número e retorne-o.  Como o resultado pode ser muito grande, você precisa retornar uma string em vez de um número inteiro.",
+    "dificuldade": "Médio",
+    "exemplo": "Input: n= [10,2] Output: \"210\"",
+    "id": 6
+  },
+  {
+    "titulo": "Desafio 7",
+    "linguagem": "C",
+    "comando": "Você recebe uma string s. Você pode converter s em um palíndromo adicionando caracteres na frente dele. Retorne o palíndromo mais curto que você puder encontrar realizando esta transformação.",
+    "dificuldade": "Difícil",
+    "exemplo": "Input: s = \"aacecaaa\" Output: \"aaacecaaa\"",
+    "id": 7
+  },
+  {
+    "titulo": "Desafio 8",
+    "linguagem": "Java",
+    "comando": "Dada uma string s representando uma expressão válida, implemente uma calculadora básica para avaliá-la e retorne o resultado da avaliação. Nota: Você não tem permissão para usar nenhuma função integrada que avalie strings como expressões matemáticas, como eval().",
+    "dificuldade": "Difícil",
+    "exemplo": "Input: s=\"1+1\" Output: 2",
+    "id": 8
+  }
+]
+      callback(dados);
+    }
+
+
 
         // Função para iniciar o desafio
         function FazerDesafio(id) {
