@@ -1,4 +1,3 @@
-// scripts.js
 let slideIndex = 0;
 const slides = document.querySelectorAll('.carousel-slide');
 
@@ -22,5 +21,10 @@ function prevSlide() {
     showSlide(slideIndex - 1);
 }
 
-// Initialize the carousel
+function autoSlide() {
+    setInterval(nextSlide, 5000); // Muda de slide a cada 30 segundos
+}
+
+// Inicializa o carrossel
 showSlide(slideIndex);
+autoSlide();
