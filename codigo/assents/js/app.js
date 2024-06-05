@@ -12,7 +12,7 @@
 // Data: 03/10/2023
 
 // URL da API JSONServer - Substitua pela URL correta da sua API
-const apiUrl = 'https://7a8c1206-76ec-4eba-b734-b33a9fe8fb07-00-1tplxyxoczmll.worf.replit.dev/contatos';
+const apiUrl = 'https://3204cb85-f4c9-4130-95a0-a178117080a2-00-1a4tc3cfi75j1.picard.replit.dev/contatos';
 //const apiUrl = 'https://jsonserver.rommelpuc.repl.co/contatos'; 
 
 function displayMessage(mensagem) {
