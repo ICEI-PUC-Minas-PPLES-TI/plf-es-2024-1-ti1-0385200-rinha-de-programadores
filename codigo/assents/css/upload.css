@@ -1,7 +1,7 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+body { 
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #121212;
+    color: #ffffff;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,15 +11,16 @@ body {
 }
 
 .container {
-    background-color: white;
+    background-color: #3a3a3a;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
 h1 {
     margin-bottom: 20px;
+    color: #4caf50;
 }
 
 form {
@@ -28,14 +29,38 @@ form {
 
 #file-input {
     margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #4caf50;
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.botao-verde {
+    background-color: #4caf50; /* Fundo verde */
+    border: none; /* Remover borda */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 20px; /* Espaçamento interno */
+    text-align: center; /* Centralizar texto */
+    text-decoration: none; /* Remover sublinhado */
+    display: inline-block; /* Exibição inline */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de pointer */
+    border-radius: 12px; /* Borda arredondada */
+    transition: background-color 0.3s;
+}
+
+.botao-verde:hover {
+    background-color: #388e3c; /* Fundo verde escuro */
 }
 
 #file-content {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #1f1f1f;
+    border: 1px solid #4caf50;
     padding: 10px;
     border-radius: 4px;
     max-height: 300px;
     overflow-y: auto;
     text-align: left;
+    color: #ffffff;
 }
