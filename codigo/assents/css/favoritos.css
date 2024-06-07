@@ -1,8 +1,42 @@
-.titulo{
-    
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: #3a3a3a;
+img {
+    width: 3%;
+    object-fit: cover;
+    border-radius: 20%;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #3a3a3a;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a {
+    color: #ffffff;
+}
+
+.titulo-pagina {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+#titulo {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap; /* Evita quebra de linha */
 }
