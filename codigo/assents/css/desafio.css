@@ -10,10 +10,9 @@ h1 {
     font-size: 2.5rem;
     color: #ffffff;
 }
-
-h1 img {
-    width: 50px;
-    vertical-align: middle;
+.logo {
+    display: flex;
+    justify-content: center;
 }
 
 .container {
