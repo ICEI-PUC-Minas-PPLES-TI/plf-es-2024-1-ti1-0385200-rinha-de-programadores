@@ -1,15 +1,15 @@
-img {
-    width: 3%;
-    object-fit: cover;
+img{
+    width: 7%;
+     object-fit: cover;
     border-radius: 20%;
-    overflow: hidden;
-}
+     overflow: hidden;
+     vertical-align: -10%;
+  }
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 0rem;
     background-color: #3a3a3a;
     margin-bottom: 1rem;
 }
@@ -18,25 +18,38 @@ header {
     font-size: 2.5rem;
     font-weight: bold;
     text-decoration: none;
+    width: 37%;
+    padding: 1rem;
+    
 }
 
 a {
     color: #ffffff;
 }
 
-.titulo-pagina {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
+a:link {
+    color: #ffffff;
+    background-color: transparent;
+    text-decoration: none;
+    
+  }
+
+a:hover{
+    color: #ffffff;
 }
+
 
 #titulo {
     font-size: 2rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
     white-space: nowrap; /* Evita quebra de linha */
+    flex-grow: 1;
+    height: 100%;
+}
+
+header h1{
+    display: flex;
+    text-align: center;
+    align-items: left;
+    
 }
