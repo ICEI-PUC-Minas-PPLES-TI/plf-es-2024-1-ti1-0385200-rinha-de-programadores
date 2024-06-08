@@ -245,5 +245,12 @@ button:hover #clip {
 }
 
 .star-btn {
-    color: #4caf50; /* Cor verde para o ícone de estrela */
-  }
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #4caf50;
+    font-size: 24px;
+    padding: 10px;
+    display: inline-block;
+
+}

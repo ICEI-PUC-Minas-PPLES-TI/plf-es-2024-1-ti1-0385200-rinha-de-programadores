@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadastro de Desafios</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assents/css/vitorC.css">   
     <link rel="stylesheet" href="../assents/css/desafio.css"> 
+    
+    <script src="https://kit.fontawesome.com/a2fceb8262.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -93,7 +96,7 @@
                                  <span id="leftArrow" class="arrow"></span>
                                 </button>
                                 </a>  
-                                <button id="favoritar-${contato.id}" onclick="toggleFavorite(${contato.id})" class="btn star-btn"><i class="fas fa-star"></i> Favoritar</button>
+                                <button id="favoritar-${contato.id}" onclick="toggleFavorite(${contato.id})" class="btn star-btn"><i class="far fa-star"></i></button>
                             </div>
                         </div>
                     `;
@@ -105,42 +108,49 @@
         
 
 
-// Função para favoritar ou desfavoritar um desafio
-function toggleFavorite(id) {
-  const contato = db.find(c => c.id === id);
-  if (contato) {
-    // Obtem os favoritos armazenados no localStorage
-    let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
 
-    // Verifica se o contato já está nos favoritos
-    const existeNoFavoritos = favoritos.some(f => f.id === id);
-    if (existeNoFavoritos) {
-      // Remove o contato dos favoritos
-      favoritos = favoritos.filter(f => f.id !== id);
-      localStorage.setItem('favoritos', JSON.stringify(favoritos));
-      alert(`O desafio ${contato.titulo} foi removido dos favoritos!`);
-      // Atualiza o texto do botão para "Favoritar"
-      const botao = document.getElementById(`favoritar-${id}`);
-      if (botao) {
-        botao.textContent = 'Favoritar';
-        botao.classList.remove('btn-danger'); // Remove a classe de estilo vermelho
-        botao.classList.add('btn-primary'); // Adiciona a classe de estilo azul
-      }
-    } else {
-      // Adiciona o contato aos favoritos
-      favoritos.push(contato);
-      localStorage.setItem('favoritos', JSON.stringify(favoritos));
-      alert(`O desafio ${contato.titulo} foi adicionado aos favoritos!`);
-      // Atualiza o texto do botão para "Desfavoritar"
-      const botao = document.getElementById(`favoritar-${id}`);
-      if (botao) {
-        botao.textContent = 'Desfavoritar';
-        botao.classList.remove('btn-primary'); // Remove a classe de estilo azul
-        botao.classList.add('btn-danger'); // Adiciona a classe de estilo vermelho
-      }
+    // Função para favoritar ou desfavoritar um desafio
+    function toggleFavorite(id) {
+        const contato = db.find(c => c.id === id);
+        if (contato) {
+            // Obtem os favoritos armazenados no localStorage
+            let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+            // Verifica se o contato já está nos favoritos
+            const existeNoFavoritos = favoritos.some(f => f.id === id);
+            if (existeNoFavoritos) {
+                // Remove o contato dos favoritos
+                favoritos = favoritos.filter(f => f.id !== id);
+                localStorage.setItem('favoritos', JSON.stringify(favoritos));
+                alert(`O desafio ${contato.titulo} foi removido dos favoritos!`);
+
+                // Atualiza o ícone do botão para estrela vazia
+                const botao = document.getElementById(`favoritar-${id}`);
+                if (botao) {
+                    const icone = botao.querySelector('i');
+                    if (icone) {
+                        icone.classList.remove('fas');
+                        icone.classList.add('far');
+                    }
+                }
+            } else {
+                // Adiciona o contato aos favoritos
+                favoritos.push(contato);
+                localStorage.setItem('favoritos', JSON.stringify(favoritos));
+                alert(`O desafio ${contato.titulo} foi adicionado aos favoritos!`);
+
+                // Atualiza o ícone do botão para estrela cheia
+                const botao = document.getElementById(`favoritar-${id}`);
+                if (botao) {
+                    const icone = botao.querySelector('i');
+                    if (icone) {
+                        icone.classList.remove('far');
+                        icone.classList.add('fas');
+                    }
+                }
+            }
+        }
     }
-  }
-}
 
     function readContato(callback) {
       // Substitua pelo código para obter os dados reais da sua API JSONServer
