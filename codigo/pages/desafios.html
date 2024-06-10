@@ -48,6 +48,14 @@
         </div>
     </div>
 
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">×</span>
+            <p id="popup-text">Este é o seu pop-up!</p>
+        </div>
+    </div>
+    
+
     <script src="../assents/js/app.js"></script>
     <script>
         // carrega os dados a partir da API JSONServer
@@ -107,8 +115,7 @@
         
 
 
-// Função para favoritar ou desfavoritar um desafio
-function toggleFavorite(id) {
+        function toggleFavorite(id) {
     const contato = db.find(c => c.id === id);
     if (contato) {
         // Obtem os favoritos armazenados no localStorage
@@ -120,12 +127,12 @@ function toggleFavorite(id) {
             // Remove o contato dos favoritos
             favoritos = favoritos.filter(f => f.id !== id);
             localStorage.setItem('favoritos', JSON.stringify(favoritos));
-            alert(`O desafio ${contato.titulo} foi removido dos favoritos!`);
+            document.getElementById('popup-text').innerText = `O desafio ${contato.titulo} foi removido dos favoritos!`;
         } else {
             // Adiciona o contato aos favoritos
             favoritos.push(contato);
             localStorage.setItem('favoritos', JSON.stringify(favoritos));
-            alert(`O desafio ${contato.titulo} foi adicionado aos favoritos!`);
+            document.getElementById('popup-text').innerText = `O desafio ${contato.titulo} foi adicionado aos favoritos!`;
         }
 
         // Atualiza o ícone do botão para estrela cheia ou vazia dependendo do estado de favorito
@@ -142,8 +149,24 @@ function toggleFavorite(id) {
                 }
             }
         }
+
+        // Mostra o pop-up
+        document.getElementById('popup').style.display = 'block';
     }
 }
+
+// Fecha o pop-up quando o usuário clica no botão de fechar
+document.getElementsByClassName('close')[0].onclick = function() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+// Fecha o pop-up quando o usuário clica fora dele
+window.onclick = function(event) {
+    if (event.target == document.getElementById('popup')) {
+        document.getElementById('popup').style.display = 'none';
+    }
+}
+
 
 // Função para verificar se um desafio é favorito
 function checkFavorite(id) {
