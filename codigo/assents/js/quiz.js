@@ -202,7 +202,7 @@
       }
       
       score.append('Você acertou ' + numCorrect + ' em um total de ' +
-                   questions.length + 'questões');
+                   questions.length + ' questões');
       return score;
     }
   })();
