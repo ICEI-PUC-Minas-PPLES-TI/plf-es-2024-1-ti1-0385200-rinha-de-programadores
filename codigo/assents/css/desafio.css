@@ -122,7 +122,7 @@ button {
 
 #rightArrow {
     -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
-    left: 102%;
+    left: 111%;
 }
 
 button:hover #rightArrow {
@@ -133,7 +133,7 @@ button:hover #rightArrow {
 
 button:hover #leftArrow {
     background-color: #27c39f;
-    left: 103%;
+    left: 111%;
     animation: 0.6s ease-in-out both infinite alternate leftArrow8;
 }
 
@@ -245,10 +245,7 @@ button:hover #clip {
 }
 
 
-.card-title {
-    display: flex;
-    align-items: center;
-}
+
 
 .star-btn {
     background: none;
@@ -274,14 +271,14 @@ button .favorite{
     position: relative;
 }
 
-button span.arrow {
+button .favorite span.arrow {
     position: absolute;
     width: 0; 
     height: 0; 
     border-style: solid;
 }
 
-button span#rightArrow {
+button .favorite span#rightArrow {
     border-width: 10px 0 10px 10px;
     border-color: transparent transparent transparent #4caf50;
     right: -10px;
@@ -289,7 +286,7 @@ button span#rightArrow {
     transform: translateY(-50%);
 }
 
-button span#leftArrow {
+button .favorite span#leftArrow {
     border-width: 10px 10px 10px 0;
     border-color: transparent #4caf50 transparent transparent;
     left: -10px;
@@ -297,29 +294,29 @@ button span#leftArrow {
     transform: translateY(-50%);
 }
 
-button #clip .corner {
+button .favorite #clip .corner {
     position: absolute;
     width: 10px;
     height: 10px;
     background-color: #4caf50;
 }
 
-button #clip #leftTop {
+button .favorite #clip #leftTop {
     top: -2px;
     left: -2px;
 }
 
-button #clip #rightBottom {
+button .favorite #clip #rightBottom {
     bottom: -2px;
     right: -2px;
 }
 
-button #clip #rightTop {
+button .favorite #clip #rightTop {
     top: -2px;
     right: -2px;
 }
 
-button #clip #leftBottom {
+button .favorite #clip #leftBottom {
     bottom: -2px;
     left: -2px;
 }
