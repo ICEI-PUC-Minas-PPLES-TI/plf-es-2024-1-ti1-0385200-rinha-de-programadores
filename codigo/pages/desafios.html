@@ -78,7 +78,7 @@
                     card.innerHTML = `
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">${contato.titulo}</h5>
+                                <h5 class="card-title">${contato.titulo}  <button id="favoritar-${contato.id}" onclick="toggleFavorite(${contato.id})" class="btn star-btn"><i class="far fa-star"></i></button></h5> 
                                 <h6 class="card-subtitle mb-2 text-muted">${contato.linguagem}</h6>
                                 <p class="card-text">${contato.comando}</p>
                                 <p class="card-text"><strong>Dificuldade:</strong> ${contato.dificuldade}</p>
@@ -96,7 +96,6 @@
                                  <span id="leftArrow" class="arrow"></span>
                                 </button>
                                 </a>  
-                                <button id="favoritar-${contato.id}" onclick="toggleFavorite(${contato.id})" class="btn star-btn"><i class="far fa-star"></i></button>
                             </div>
                         </div>
                     `;

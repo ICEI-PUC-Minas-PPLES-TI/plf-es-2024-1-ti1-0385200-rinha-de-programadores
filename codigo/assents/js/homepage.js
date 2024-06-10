@@ -77,7 +77,7 @@ fetch('https://3204cb85-f4c9-4130-95a0-a178117080a2-00-1a4tc3cfi75j1.picard.repl
                         <p>${randomCard.linguagem}</p>
                     </div>
                     <p class="job">${randomCard.dificuldade}</p>
-                    <button>Buscar</button>
+                    <a href="../pages/desafios.html"><button>Buscar</button></a>
                 `;
                 cardContainer.appendChild(card);
             } else {

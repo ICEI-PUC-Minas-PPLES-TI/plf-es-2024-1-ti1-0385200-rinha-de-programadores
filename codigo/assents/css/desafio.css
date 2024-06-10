@@ -244,13 +244,82 @@ button:hover #clip {
     }
 }
 
+
+.card-title {
+    display: flex;
+    align-items: center;
+}
+
 .star-btn {
     background: none;
     border: none;
     cursor: pointer;
-    color: #4caf50;
-    font-size: 24px;
-    padding: 10px;
-    display: inline-block;
+    padding: 0;
+    margin-left: 10px;
+}
 
+.star-btn i {
+    font-size: 1.5rem;
+    color: #4caf50;
+    line-height: 1; /* Ajusta o alinhamento vertical do ícone */
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid #4caf50;
+    color: #4caf50;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+button span.arrow {
+    position: absolute;
+    width: 0; 
+    height: 0; 
+    border-style: solid;
+}
+
+button span#rightArrow {
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #4caf50;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+button span#leftArrow {
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #4caf50 transparent transparent;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+button #clip .corner {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #4caf50;
+}
+
+button #clip #leftTop {
+    top: -2px;
+    left: -2px;
+}
+
+button #clip #rightBottom {
+    bottom: -2px;
+    right: -2px;
+}
+
+button #clip #rightTop {
+    top: -2px;
+    right: -2px;
+}
+
+button #clip #leftBottom {
+    bottom: -2px;
+    left: -2px;
 }
