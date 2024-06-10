@@ -18,8 +18,18 @@ function ListaFavoritos() {
               <p class="card-text">${contato.comando}</p>
               <p class="card-text"><strong>Dificuldade:</strong> ${contato.dificuldade}</p>
               <p class="card-text"><strong>Exemplo:</strong> ${contato.exemplo}</p>
-              <a href="../pages/desafios.html">
-                  <button class="btn btn-danger mt-2"> Buscar </button>
+              <a href="../pages/upload.html">
+              <button>
+              P L A Y
+              <div id="clip">
+              <div id="leftTop" class="corner"></div>
+              <div id="rightBottom" class="corner"></div>
+             <div id="rightTop" class="corner"></div>
+              <div id="leftBottom" class="corner"></div>
+              </div>
+              <span id="rightArrow" class="arrow"></span>
+               <span id="leftArrow" class="arrow"></span>
+              </button>
               </a>
           </div>
       </div>
