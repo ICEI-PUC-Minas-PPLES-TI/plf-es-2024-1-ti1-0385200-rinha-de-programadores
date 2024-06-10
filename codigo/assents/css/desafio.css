@@ -264,7 +264,7 @@ button:hover #clip {
     line-height: 1; /* Ajusta o alinhamento vertical do ícone */
 }
 
-button {
+button .favorite{
     background-color: transparent;
     border: 2px solid #4caf50;
     color: #4caf50;
