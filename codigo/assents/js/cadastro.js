@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var formSignup = document.querySelector("#signup-form");
     var formSignin = document.querySelector("#signin-form");
     var body = document.querySelector("body");
+    var popup = document.getElementById('popup');
 
     // Armazenar os dados do usuário no Local Storage
     function storeUserData(name, email, password) {
@@ -27,9 +28,11 @@ document.addEventListener("DOMContentLoaded", function() {
         var password = document.querySelector('#password').value;
         if (name && email && password) {
             storeUserData(name, email, password);
-            alert("Cadastro realizado com sucesso!");
+            document.getElementById('popup-text').innerText = "Cadastro realizado com sucesso!";
+            popup.style.display = 'block';
         } else {
-            alert("Preencha os campos corretamente.");
+            document.getElementById('popup-text').innerText = "Preencha os campos corretamente.";
+            popup.style.display = 'block';
         }
     }
 
@@ -41,9 +44,12 @@ document.addEventListener("DOMContentLoaded", function() {
         var users = JSON.parse(localStorage.getItem("users")) || [];
         var user = users.find(user => user.email === email && user.password === password);
         if (user) {
-            alert("Login efetuado com sucesso!");
+            document.getElementById('popup-text').innerText = "O cadastro foi bem sucedido!";
+            popup.style.display = 'block';
+            window.location.href = '../pages/index_homepage.html';
         } else {
-            alert("Email ou senha inválidos.");
+            document.getElementById('popup-text').innerText = "O login não está correto!";
+            popup.style.display = 'block';
         }
     }
 
@@ -82,5 +88,12 @@ document.addEventListener("DOMContentLoaded", function() {
         elements.forEach(function(element) {
             element.classList.add('initial-load');
         });
+    };
+
+    // Fecha o pop-up quando o usuário clica fora dele
+    window.onclick = function(event) {
+        if (event.target == popup) {
+            popup.style.display = 'none';
+        }
     };
 });
