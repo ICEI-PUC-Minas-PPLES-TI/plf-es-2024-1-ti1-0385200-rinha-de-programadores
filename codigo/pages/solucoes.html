@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Soluções de Desafios</title>
+    <title>Cadastro de Desafios</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/codigo/assents/css/solucoes.css">
+    <link rel="stylesheet" href="../assents/css/vitorC.css">   
+    <link rel="stylesheet" href="../assents/css/desafio.css"> 
+    
+    <script src="https://kit.fontawesome.com/a2fceb8262.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Soluções  <a href="/codigo/pages/index_homepage.html"><img src ="/codigo/assents/images/logo (2).svg" alt = "Logo"></a></h1>
+    <div class="logo">
+      <a href="../pages/index_homepage.html"> <img src="../assents/images/logo.png" alt="" width="250px" height="190px"></a>
+    </div>
+    <h1>Desafios</h1>
 
     <div class="container">
         <div class="row">
@@ -20,384 +27,254 @@
             </div>
         </div>
         
-        <form id="form-solucao">            
+        <form id="form-contato">            
             <div class="form-group row">
                 <div class="col-sm-8">
-                    <select name="filtro_dificuldade" id="filtro_dificuldade" onchange="MostrarSolucao()" class="form-control">
+                    <select name="filtro_cidade" id="filtro_cidade" onchange="ListaContatos()" class="form-control">
                         <option value="">Selecione a Dificuldade</option>
                         <option value="Fácil">Fácil</option>
                         <option value="Médio">Médio</option>
-                        <option value="Díficil">Díficil</option>
+                        <option value="Difícil">Difícil</option>
                     </select>                    
+                </div>
+                <div class="col-sm-4 text-right">
+                    <a href="link para videos"><input type="button" class="btn btn-warning" id="btnClear" value="Videos"></a>
                 </div>
             </div>
         </form>
 
-        <div id="solucao-container" class="row">
-            <div class="col-sm-12">
-                <div id="nome-desafio" class="font-weight-bold" style="display: none;"></div>
-                <pre id="codigo-solucao" class="p-3" style="display: none; background-color: #222; color: #0f0; border: 1px solid #0f0; border-radius: 5px;"></pre>
-            </div>
+        <div class="row" id="cards-contatos">
+            <!-- Os cards serão inseridos aqui pelo JavaScript -->
         </div>
     </div>
 
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">×</span>
+            <p id="popup-text">Este é o seu pop-up!</p>
+        </div>
+    </div>
+    
+
+    <script src="../assents/js/app.js"></script>
     <script>
-        // Mockup de dados de soluções
-        const solucoes = {
-            'Fácil': {
-                nome: 'Desafio Fácil',
-                codigo: `/*desafio 1*/ 
-                #include <stdio.h>
+        // carrega os dados a partir da API JSONServer
+        var db = [];
+        readContato(dados => {
+            db = dados;
+            ListaContatos();
+        });
 
-int main() {
-    int numero;
+        // função para listar os contatos em cards
+        function ListaContatos() {
+            // Obtem os dados informados pelo usuário nos filtros
+            let fc = document.getElementById('filtro_cidade').value;
 
-    // Solicita ao usuário para digitar um número inteiro
-    printf("Digite um número inteiro: ");
-    scanf("%d", &numero);
+            // limpa a lista de contatos apresentados
+            let cardsContatos = document.getElementById("cards-contatos");
+            cardsContatos.innerHTML = "";
 
-    // Verifica se o número é par ou ímpar
-    if (numero % 2 == 0) {
-        printf("O número %d é par.\n", numero);
-    } else {
-        printf("O número %d é ímpar.\n", numero);
-    }
+            // Popula os cards com os registros do banco de dados
+            for (let index = 0; index < db.length; index++) {
+                const contato = db[index];
 
-    return 0;
-}
-
-
-//desafio 2//
-
-
-import java.util.Scanner;
-
-public class Palindromo {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Solicita ao usuário para digitar um número de 5 dígitos
-        System.out.print("Digite um número de 5 dígitos: ");
-        int numero = scanner.nextInt();
-
-        // Verifica se o número tem 5 dígitos
-        if (numero < 10000 || numero > 99999) {
-            System.out.println("O número digitado não tem 5 dígitos.");
-        } else {
-            // Converte o número para uma string
-            String numeroStr = Integer.toString(numero);
-
-            // Verifica se a string é um palíndromo
-            boolean isPalindromo = true;
-            for (int i = 0; i < numeroStr.length() / 2; i++) {
-                if (numeroStr.charAt(i) != numeroStr.charAt(numeroStr.length() - 1 - i)) {
-                    isPalindromo = false;
-                    break;
+                // Verifica se os dados do contato batem com os filtros
+                if ((contato.dificuldade == fc) || (fc == '')) {
+                    // Cria o card do contato
+                    let card = document.createElement('div');
+                    card.className = 'col-sm-4 mb-4';
+                    card.innerHTML = `
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">${contato.titulo}  <button id="favoritar-${contato.id}" onclick="toggleFavorite(${contato.id})" class="btn star-btn"><i class="far fa-star"></i></button></h5> 
+                                <h6 class="card-subtitle mb-2 text-muted">${contato.linguagem}</h6>
+                                <p class="card-text">${contato.comando}</p>
+                                <p class="card-text"><strong>Dificuldade:</strong> ${contato.dificuldade}</p>
+                                <p class="card-text"><strong>Exemplo:</strong> ${contato.exemplo}</p>
+                                <a href="../pages/upload.html">
+                                <button>
+                                P L A Y
+                                <div id="clip">
+                                <div id="leftTop" class="corner"></div>
+                                <div id="rightBottom" class="corner"></div>
+                               <div id="rightTop" class="corner"></div>
+                                <div id="leftBottom" class="corner"></div>
+                                </div>
+                                <span id="rightArrow" class="arrow"></span>
+                                 <span id="leftArrow" class="arrow"></span>
+                                </button>
+                                </a>  
+                            </div>
+                        </div>
+                    `;
+                    cardsContatos.appendChild(card);
                 }
             }
+        }
 
-            // Exibe se o número é ou não um palíndromo
-            if (isPalindromo) {
-                System.out.println("O número " + numero + " é um palíndromo.");
-            } else {
-                System.out.println("O número " + numero + " não é um palíndromo.");
+        
+
+
+        function toggleFavorite(id) {
+    const contato = db.find(c => c.id === id);
+    if (contato) {
+        // Obtem os favoritos armazenados no localStorage
+        let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+        // Verifica se o contato já está nos favoritos
+        const existeNoFavoritos = favoritos.some(f => f.id === id);
+        if (existeNoFavoritos) {
+            // Remove o contato dos favoritos
+            favoritos = favoritos.filter(f => f.id !== id);
+            localStorage.setItem('favoritos', JSON.stringify(favoritos));
+            document.getElementById('popup-text').innerText = `O desafio ${contato.titulo} foi removido dos favoritos!`;
+        } else {
+            // Adiciona o contato aos favoritos
+            favoritos.push(contato);
+            localStorage.setItem('favoritos', JSON.stringify(favoritos));
+            document.getElementById('popup-text').innerText = `O desafio ${contato.titulo} foi adicionado aos favoritos!`;
+        }
+
+        // Atualiza o ícone do botão para estrela cheia ou vazia dependendo do estado de favorito
+        const botao = document.getElementById(`favoritar-${id}`);
+        if (botao) {
+            const icone = botao.querySelector('i');
+            if (icone) {
+                if (existeNoFavoritos) {
+                    icone.classList.remove('fas');
+                    icone.classList.add('far');
+                } else {
+                    icone.classList.remove('far');
+                    icone.classList.add('fas');
+                }
             }
         }
 
-        scanner.close();
+        // Mostra o pop-up
+        document.getElementById('popup').style.display = 'block';
+    }
+}
+
+// Fecha o pop-up quando o usuário clica no botão de fechar
+document.getElementsByClassName('close')[0].onclick = function() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+// Fecha o pop-up quando o usuário clica fora dele
+window.onclick = function(event) {
+    if (event.target == document.getElementById('popup')) {
+        document.getElementById('popup').style.display = 'none';
     }
 }
 
 
+// Função para verificar se um desafio é favorito
+function checkFavorite(id) {
+    const contato = db.find(c => c.id === id);
+    if (contato) {
+        // Obtem os favoritos armazenados no localStorage
+        let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
 
+        // Verifica se o contato já está nos favoritos
+        const existeNoFavoritos = favoritos.some(f => f.id === id);
 
-
-#desafio 3#
-
-
-
-def longest_common_prefix(strs):
-    if not strs:
-        return ""
-
-    # A função zip(*strs) combina os caracteres das strings posição por posição
-    for i, char_group in enumerate(zip(*strs)):
-        # Converte o grupo de caracteres para um set para verificar se todos são iguais
-        if len(set(char_group)) > 1:
-            return strs[0][:i]
-    
-    # Se o loop terminar sem encontrar diferenças, o prefixo comum é a string mais curta
-    return min(strs, key=len)
-
-# Teste da função
-strings = ["flower", "flow", "flight"]
-print(longest_common_prefix(strings))  # Output: "fl"`
-            },
-            'Médio': {
-                nome: 'Desafio Médio',
-                codigo: `/desafio 4*/
-            #include <stdio.h>
-
-int main() {
-    int A, B, C, temp;
-
-    // Solicita ao usuário para digitar três valores inteiros
-    printf("Digite o valor de A: ");
-    scanf("%d", &A);
-    printf("Digite o valor de B: ");
-    scanf("%d", &B);
-    printf("Digite o valor de C: ");
-    scanf("%d", &C);
-
-    // Processamento para ordenar os valores
-    if (A > B) {
-        temp = A;
-        A = B;
-        B = temp;
-    }
-    if (A > C) {
-        temp = A;
-        A = C;
-        C = temp;
-    }
-    if (B > C) {
-        temp = B;
-        B = C;
-        C = temp;
-    }
-
-    // Imprime os valores ordenados
-    printf("Valores ordenados: A = %d, B = %d, C = %d\n", A, B, C);
-
-    return 0;
-}
-
-
-
-//desafio 5//
-
-import java.util.Random;
-import java.util.Scanner;
-
-public class CaraOuCoroa {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-        
-        int tentativas = 10;
-        int acertos = 0;
-        int erros = 0;
-
-        for (int i = 0; i < tentativas; i++) {
-            System.out.print("Escolha cara (0) ou coroa (1): ");
-            int escolha = scanner.nextInt();
-            
-            if (escolha != 0 && escolha != 1) {
-                System.out.println("Escolha inválida! Digite 0 para cara ou 1 para coroa.");
-                i--; // Para não contar a tentativa inválida
-                continue;
-            }
-
-            int resultado = random.nextInt(2); // Gera 0 ou 1 aleatoriamente
-
-            if (escolha == resultado) {
-                acertos++;
-                System.out.println("Você acertou! Resultado: " + (resultado == 0 ? "Cara" : "Coroa"));
-            } else {
-                erros++;
-                System.out.println("Você errou! Resultado: " + (resultado == 0 ? "Cara" : "Coroa"));
+        // Atualiza o ícone do botão para estrela cheia ou vazia dependendo do estado de favorito
+        const botao = document.getElementById(`favoritar-${id}`);
+        if (botao) {
+            const icone = botao.querySelector('i');
+            if (icone) {
+                if (existeNoFavoritos) {
+                    icone.classList.remove('far');
+                    icone.classList.add('fas');
+                } else {
+                    icone.classList.remove('fas');
+                    icone.classList.add('far');
+                }
             }
         }
-
-        System.out.println("Fim do jogo!");
-        System.out.println("Total de acertos: " + acertos);
-        System.out.println("Total de erros: " + erros);
-        
-        scanner.close();
     }
 }
 
+// Chama checkFavorite para cada desafio quando a página for carregada
+window.onload = function() {
+    db.forEach(contato => checkFavorite(contato.id));
+};
 
-#desafio 6#
 
-from functools import cmp_to_key
 
-def compare(x, y):
-    # Compara duas strings x e y concatenadas de ambas as formas possíveis
-    if x + y > y + x:
-        return -1
-    elif x + y < y + x:
-        return 1
-    else:
-        return 0
-
-def largest_number(nums):
-    # Converte os números para strings para facilitar a concatenação e comparação
-    nums_str = list(map(str, nums))
-    
-    # Ordena os números com base na comparação personalizada
-    nums_str.sort(key=cmp_to_key(compare))
-    
-    # Junta os números ordenados em uma única string
-    result = ''.join(nums_str)
-    
-    # Remove zeros à esquerda (se houver) e retorna o resultado
-    return result if result[0] != '0' else '0'
-
-# Teste da função
-nums = [3, 30, 34, 5, 9]
-print(largest_number(nums))  # Output: "9534330"`
-            },
-            'Díficil': {
-                nome: 'Desafio Díficil',
-                codigo: `/* desafio 7*/
-                
-                #include <stdio.h>
-#include <string.h>
-
-// Função para verificar se uma string é um palíndromo
-int isPalindrome(char* s, int len) {
-    int i = 0, j = len - 1;
-    while (i < j) {
-        if (s[i] != s[j]) {
-            return 0;
-        }
-        i++;
-        j--;
-    }
-    return 1;
-}
-
-// Função para encontrar o palíndromo mais curto adicionando caracteres no início
-char* shortestPalindrome(char* s) {
-    int len = strlen(s);
-    int i;
-    
-    // Verifica o maior sufixo que é um palíndromo
-    for (i = len; i >= 0; i--) {
-        if (isPalindrome(s, i)) {
-            break;
-        }
-    }
-
-    // Cria a nova string resultante
-    char* result = (char*)malloc((len + len - i + 1) * sizeof(char));
-    int j, k = 0;
-    
-    // Adiciona os caracteres necessários no início
-    for (j = len - 1; j >= i; j--) {
-        result[k++] = s[j];
-    }
-    
-    // Copia a string original
-    for (j = 0; j < len; j++) {
-        result[k++] = s[j];
+    function readContato(callback) {
+      // Substitua pelo código para obter os dados reais da sua API JSONServer
+      const dados = 
+      [
+  {
+    "titulo": "Solução 1",
+    "linguagem": "C",
+    "comando": "/*desafio 1*/ \n#include <stdio.h>\n\nint main() {\n    int numero;\n\n    // Solicita ao usuário para digitar um número inteiro\n    printf(\"Digite um número inteiro: \");\n    scanf(\"%d\", &numero);\n\n    // Verifica se o número é par ou ímpar\n    if (numero % 2 == 0) {\n        printf(\"O número %d é par.\\n\", numero);\n    } else {\n        printf(\"O número %d é ímpar.\\n\", numero);\n    }\n\n    return 0;\n}",
+    "dificuldade": "Fácil",
+    "id": 1
+  },
+  {
+    "titulo": "Solução 2",
+    "linguagem": "Java",
+    "comando": "//desafio 2//\n\n\nimport java.util.Scanner;\n\npublic class Palindromo {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n\n        // Solicita ao usuário para digitar um número de 5 dígitos\n        System.out.print(\"Digite um número de 5 dígitos: \");\n        int numero = scanner.nextInt();\n\n        // Verifica se o número tem 5 dígitos\n        if (numero < 10000 || numero > 99999) {\n            System.out.println(\"O número digitado não tem 5 dígitos.\");\n        } else {\n            // Converte o número para uma string\n            String numeroStr = Integer.toString(numero);\n\n            // Verifica se a string é um palíndromo\n            boolean isPalindromo = true;\n            for (int i = 0; i < numeroStr.length() / 2; i++) {\n                if (numeroStr.charAt(i) != numeroStr.charAt(numeroStr.length() - 1 - i)) {\n                    isPalindromo = false;\n                    break;\n                }\n            }\n\n            // Exibe se o número é ou não um palíndromo\n            if (isPalindromo) {\n                System.out.println(\"O número \" + numero + \" é um palíndromo.\");\n            } else {\n                System.out.println(\"O número \" + numero + \" não é um palíndromo.\");\n            }\n        }\n\n        scanner.close();\n    }\n}",
+    "dificuldade": "Fácil",
+    "id": 2
+  },
+  {
+    "titulo": "SOlução 3",
+    "linguagem": "Python",
+    "comando": "#desafio 3#\n\n\n\ndef longest_common_prefix(strs) {\n    if not strs:\n        return \"\"\n\n    # A função zip(*strs) combina os caracteres das strings posição por posição\n    for i, char_group in enumerate(zip(*strs)):\n        # Converte o grupo de caracteres para um set para verificar se todos são iguais\n        if len(set(char_group)) > 1:\n            return strs[0][:i]\n    \n    # Se o loop terminar sem encontrar diferenças, o prefixo comum é a string mais curta\n    return min(strs, key=len)\n\n# Teste da função\nstrings = [\"flower\", \"flow\", \"flight\"]\nprint(longest_common_prefix(strings))  # Output: \"fl\"\n",
+    "dificuldade": "Fácil",
+    "id": 3
+  },
+  {
+    "titulo": "Solução 4",
+    "linguagem": "C",
+    "comando": "/desafio 4*/\n            #include <stdio.h>\n\nint main() {\n    int A, B, C, temp;\n\n    // Solicita ao usuário para digitar três valores inteiros\n    printf(\"Digite o valor de A: \");\n    scanf(\"%d\", &A);\n    printf(\"Digite o valor de B: \");\n    scanf(\"%d\", &B);\n    printf(\"Digite o valor de C: \");\n    scanf(\"%d\", &C);\n\n    // Processamento para ordenar os valores\n    if (A > B) {\n        temp = A;\n        A = B;\n        B = temp;\n    }\n    if (A > C) {\n        temp = A;\n        A = C;\n        C = temp;\n    }\n    if (B > C) {\n        temp = B;\n        B = C;\n        C = temp;\n    }\n\n    // Imprime os valores ordenados\n    printf(\"Valores ordenados: A = %d, B = %d, C = %d\\n\", A, B, C);\n\n    return 0;\n}\n\n\n\n",
+    "dificuldade": "Médio",
+    "id": 4
+  },
+  {
+    "titulo": "Solução 5",
+    "linguagem": "Java",
+    "comando": "//desafio 5//\n\nimport java.util.Random;\nimport java.util.Scanner;\n\npublic class CaraOuCoroa {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        Random random = new Random();\n        \n        int tentativas = 10;\n        int acertos = 0;\n        int erros = 0;\n\n        for (int i = 0; i < tentativas; i++) {\n            System.out.print(\"Escolha cara (0) ou coroa (1): \");\n            int escolha = scanner.nextInt();\n            \n            if (escolha != 0 && escolha != 1) {\n                System.out.println(\"Escolha inválida! Digite 0 para cara ou 1 para coroa.\");\n                i--; // Para não contar a tentativa inválida\n                continue;\n            }\n\n            int resultado = random.nextInt(2); // Gera 0 ou 1 aleatoriamente\n\n            if (escolha == resultado) {\n                acertos++;\n                System.out.println(\"Você acertou! Resultado: \" + (resultado == 0 ? \"Cara\" : \"Coroa\"));\n            } else {\n                erros++;\n                System.out.println(\"Você errou! Resultado: \" + (resultado == 0 ? \"Cara\" : \"Coroa\"));\n            }\n        }\n\n        System.out.println(\"Fim do jogo!\");\n        System.out.println(\"Total de acertos: \" + acertos);\n        System.out.println(\"Total de erros: \" + erros);\n        \n        scanner.close();\n    }\n}\n\n\n",
+    "dificuldade": "Médio",
+    "id": 5
+  },
+  {
+    "titulo": "Solução 6",
+    "linguagem": "Python",
+    "comando": "#desafio 6#\n\nfrom functools import cmp_to_key\n\ndef compare(x, y):\n    # Compara duas strings x e y concatenadas de ambas as formas possíveis\n    if x + y > y + x:\n        return -1\n    elif x + y < y + x:\n        return 1\n    else:\n        return 0\n\ndef largest_number(nums):\n    # Converte os números para strings para facilitar a concatenação e comparação\n    nums_str = list(map(str, nums));\n    \n    # Ordena os números com base na comparação personalizada\n    nums_str.sort(key=cmp_to_key(compare));\n    \n    # Junta os números ordenados em uma única string\n    result = ''.join(nums_str);\n    \n    # Remove zeros à esquerda (se houver) e retorna o resultado\n    return result if result[0] != '0' else '0';\n\n# Teste da função\nnums = [3, 30, 34, 5, 9];\nprint(largest_number(nums))  # Output: \"9534330\";\n",
+    "dificuldade": "Médio",
+    "id": 6
+  },
+  {
+    "titulo": "Solução 7",
+    "linguagem": "C",
+    "comando": "/* desafio 7*/\n                \n                #include <stdio.h>\n#include <string.h>\n\n// Função para verificar se uma string é um palíndromo\nint isPalindrome(char* s, int len) {\n    int i = 0, j = len - 1;\n    while (i < j) {\n        if (s[i] != s[j]) {\n            return 0;\n        }\n        i++;\n        j--;\n    }\n    return 1;\n}\n\n// Função para encontrar o palíndromo mais curto adicionando caracteres no início\nchar* shortestPalindrome(char* s) {\n    int len = strlen(s);\n    int i;\n    \n    // Verifica o maior sufixo que é um palíndromo\n    for (i = len; i >= 0; i--) {\n        if (isPalindrome(s, i)) {\n            break;\n        }\n    }\n\n    // Cria a nova string resultante\n    char* result = (char*)malloc((len + len - i + 1) * sizeof(char));\n    int j, k = 0;\n    \n    // Adiciona os caracteres necessários no início\n    for (j = len - 1; j >= i; j--) {\n        result[k++] = s[j];\n    }\n\n    // Copia a string original\n    for (j = 0; j < len; j++) {\n        result[k++] = s[j];\n    }\n\n    result[k] = '\\0';\n    return result;\n}\n\nint main() {\n    char s[100];\n    printf(\"Digite uma string: \");\n    scanf(\"%s\", s);\n\n    char* result = shortestPalindrome(s);\n    printf(\"O palíndromo mais curto é: %s\\n\", result);\n\n    free(result);\n    return 0;\n}\n\n\n\n",
+    "dificuldade": "Difícil",
+    "id": 7
+  },
+  {
+    "titulo": "Solução 8",
+    "linguagem": "Java",
+    "comando": "//desafio 8//\n\nimport java.util.Scanner;\n\npublic class SomaNumerosGrandes {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n\n        // Solicita ao usuário para digitar dois números grandes\n        System.out.print(\"Digite o primeiro número grande: \");\n        String num1 = scanner.nextLine();\n        System.out.print(\"Digite o segundo número grande: \");\n        String num2 = scanner.nextLine();\n\n        // Inicializa variáveis para a soma e os índices das strings\n        StringBuilder soma = new StringBuilder();\n        int i = num1.length() - 1;\n        int j = num2.length() - 1;\n        int carry = 0;\n\n        // Realiza a soma dos números dígito a dígito\n        while (i >= 0 || j >= 0 || carry != 0) {\n            int digito1 = (i >= 0) ? num1.charAt(i) - '0' : 0;\n            int digito2 = (j >= 0) ? num2.charAt(j) - '0' : 0;\n\n            int total = digito1 + digito2 + carry;\n            soma.append(total % 10);\n            carry = total / 10;\n\n            i--;\n            j--;\n        }\n\n        // Inverte a string de soma e imprime o resultado\n        System.out.println(\"A soma dos números é: \" + soma.reverse().toString());\n\n        scanner.close();\n    }\n}\n\n\n//desafio 9//\n\ndef maior_subsequencia_palindroma(s):\n    n = len(s);\n\n    # Cria uma tabela 2D para armazenar os resultados dos subproblemas\n    tabela = [[0 for x in range(n)] for y in range(n)];\n\n    # Sequências de um único caractere são palíndromos de comprimento 1\n    for i in range(n):\n        tabela[i][i] = 1;\n\n    # Preenche a tabela\n    for comprimento in range(2, n + 1):\n        for i in range(n - comprimento + 1):\n            j = i + comprimento - 1;\n            if s[i] == s[j] and comprimento == 2:\n                tabela[i][j] = 2;\n            elif s[i] == s[j]:\n                tabela[i][j] = tabela[i + 1][j - 1] + 2;\n            else:\n                tabela[i][j] = max(tabela[i][j - 1], tabela[i + 1][j]);\n\n    # O resultado está na tabela[0][n-1]\n    return tabela[0][n - 1];\n\n# Teste da função\ns = \"bbbab\";\nprint(maior_subsequencia_palindroma(s));  # Output: 4 (A maior subsequência palíndroma é \"bbbb\")\n",
+    "dificuldade": "Difícil",
+    "id": 8
+  }
+]
+      callback(dados);
     }
 
-    result[k] = '\0';
-    return result;
-}
-
-int main() {
-    char s[] = "aacecaaa";
-    char* result = shortestPalindrome(s);
-    printf("Palíndromo mais curto: %s\n", result);
-    free(result);
-    return 0;
-}
 
 
-//desafio 8//
-
-
-
-
-import java.util.Stack;
-
-public class BasicCalculator {
-    public int calculate(String s) {
-        Stack<Integer> stack = new Stack<>();
-        int result = 0;
-        int number = 0;
-        int sign = 1; // 1 significa positivo, -1 significa negativo
-        
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            
-            if (Character.isDigit(ch)) {
-                // Construir o número atual
-                number = number * 10 + (ch - '0');
-            } else if (ch == '+') {
-                // Adicionar o número anterior ao resultado com o sinal correto
-                result += sign * number;
-                number = 0; // Resetar o número
-                sign = 1; // Definir o próximo sinal como positivo
-            } else if (ch == '-') {
-                // Adicionar o número anterior ao resultado com o sinal correto
-                result += sign * number;
-                number = 0; // Resetar o número
-                sign = -1; // Definir o próximo sinal como negativo
-            } else if (ch == '(') {
-                // Empurrar o resultado atual e o sinal para a pilha
-                stack.push(result);
-                stack.push(sign);
-                // Resetar resultado e sinal para a nova subexpressão
-                result = 0;
-                sign = 1;
-            } else if (ch == ')') {
-                // Adicionar o número anterior ao resultado com o sinal correto
-                result += sign * number;
-                number = 0; // Resetar o número
-                // Multiplicar o resultado atual pelo sinal anterior
-                result *= stack.pop();
-                // Adicionar ao resultado acumulado anteriormente
-                result += stack.pop();
-            }
-        }
-        
-        // Adicionar o último número ao resultado
-        if (number != 0) {
-            result += sign * number;
-        }
-        
-        return result;
-    }
-
-    public static void main(String[] args) {
-        BasicCalculator calculator = new BasicCalculator();
-        String expression = "1 + 1";
-        System.out.println("Resultado: " + calculator.calculate(expression)); // Output: 2
-        
-        expression = "2-1 + 2";
-        System.out.println("Resultado: " + calculator.calculate(expression)); // Output: 3
-        
-        expression = "(1+(4+5+2)-3)+(6+8)";
-        System.out.println("Resultado: " + calculator.calculate(expression)); // Output: 23
-    }
-}    
-`
-            }
-        };
-
-        function MostrarSolucao() {
-            const dificuldade = document.getElementById('filtro_dificuldade').value;
-            const solucaoContainer = document.getElementById('solucao-container');
-            const nomeDesafio = document.getElementById('nome-desafio');
-            const codigoSolucao = document.getElementById('codigo-solucao');
-            
-            if (dificuldade && solucoes[dificuldade]) {
-                nomeDesafio.style.display = 'block';
-                codigoSolucao.style.display = 'block';
-                nomeDesafio.textContent = solucoes[dificuldade].nome;
-                codigoSolucao.textContent = solucoes[dificuldade].codigo;
-            } else {
-                nomeDesafio.style.display = 'none';
-                codigoSolucao.style.display = 'none';
-                nomeDesafio.textContent = '';
-                codigoSolucao.textContent = '';
-            }
+        // Função para iniciar o desafio
+        function FazerDesafio(id) {
+            alert(`Iniciando solução com ID: ${id}`);
+            // Adicione aqui a lógica para iniciar o desafio
         }
     </script>
+
 </body>
 
 </html>

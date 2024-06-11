@@ -1,19 +1,5 @@
-// Trabalho Interdisciplinar 1 - Aplicações Web
-//
-// Esse módulo realiza as operações de CRUD a partir de uma API baseada no JSONServer
-// O servidor JSONServer fica hospedado na seguinte URL
-// https://jsonserver.rommelpuc.repl.co/contatos
-//
-// Para fazer o seu servidor, acesse o projeto do JSONServer no Replit, faça o 
-// fork do projeto e altere o arquivo db.json para incluir os dados do seu projeto.
-// URL Projeto JSONServer: https://replit.com/@rommelpuc/JSONServer
-//
-// Autor: Rommel Vieira Carneiro
-// Data: 03/10/2023
 
-// URL da API JSONServer - Substitua pela URL correta da sua API
 const apiUrl = 'https://eb700869-eca6-473d-9af1-75322bcf0c25-00-y1edyngkgsvb.spock.replit.dev/contatos';
-//const apiUrl = 'https://jsonserver.rommelpuc.repl.co/contatos'; 
 
 function displayMessage(mensagem) {
     msg = document.getElementById('msg');
@@ -27,8 +13,8 @@ function readContato(processaDados) {
             processaDados(data);
         })
         .catch(error => {
-            console.error('Erro ao ler desafios via API JSONServer:', error);
-            displayMessage("Erro ao ler desafios");
+            console.error('Erro ao ler soluções via API JSONServer:', error);
+            displayMessage("Erro ao ler soluções");
         });
 }
 
@@ -42,13 +28,13 @@ function createContato(contato, refreshFunction) {
     })
         .then(response => response.json())
         .then(data => {
-            displayMessage("Desafio inserido com sucesso");
+            displayMessage("Solução inserida com sucesso");
             if (refreshFunction)
                 refreshFunction();
         })
         .catch(error => {
-            console.error('Erro ao inserir desafio via API JSONServer:', error);
-            displayMessage("Erro ao inserir desafio");
+            console.error('Erro ao inserir solução via API JSONServer:', error);
+            displayMessage("Erro ao inserir solução");
         });
 }
 
@@ -62,13 +48,13 @@ function updateContato(id, contato, refreshFunction) {
     })
         .then(response => response.json())
         .then(data => {
-            displayMessage("Desafio alterado com sucesso");
+            displayMessage("Solução alterada com sucesso");
             if (refreshFunction)
                 refreshFunction();
         })
         .catch(error => {
-            console.error('Erro ao atualizar desafio via API JSONServer:', error);
-            displayMessage("Erro ao atualizar desafio");
+            console.error('Erro ao atualizar solução via API JSONServer:', error);
+            displayMessage("Erro ao atualizar solução");
         });
 }
 
@@ -78,12 +64,12 @@ function deleteContato(id, refreshFunction) {
     })
         .then(response => response.json())
         .then(data => {
-            displayMessage("Desafio removido com sucesso");
+            displayMessage("Solução removida com sucesso");
             if (refreshFunction)
                 refreshFunction();
         })
         .catch(error => {
-            console.error('Erro ao remover desafio via API JSONServer:', error);
-            displayMessage("Erro ao remover desafio");
+            console.error('Erro ao remover Solução via API JSONServer:', error);
+            displayMessage("Erro ao remover solução");
         });
 }
