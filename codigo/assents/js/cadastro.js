@@ -97,3 +97,10 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 });
+
+function viewStoredUsers() {
+    var users = JSON.parse(localStorage.getItem("users")) || [];
+    users.forEach(user => {
+        console.log(`ID: ${user.id}, Name: ${user.name}, Email: ${user.email}`);
+    });
+}
