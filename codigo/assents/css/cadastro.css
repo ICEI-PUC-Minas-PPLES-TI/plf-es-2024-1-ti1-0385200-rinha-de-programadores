@@ -1,27 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #243B55, #141E30);
+    color: #fff;
+    overflow: hidden;
 }
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #ecf0f1;
+    overflow: hidden;
 }
 .content {
     background-color: #000000;
     border-radius: 15px;
     width: 960px;
-    height: 50%;
+    height: 60%;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
 .content::before {
     content: "";
@@ -31,9 +37,8 @@ body {
     height: 100%;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-
-
     left: 0;
+    transition: all 1s ease-in-out;
 }
 .title {
     font-size: 28px;
@@ -61,7 +66,7 @@ body {
     border-radius: 15px;
     text-transform: uppercase;
     color: #fff;
-    font-size: 10px;
+    font-size: 12px;
     padding: 10px 50px;
     cursor: pointer;
     font-weight: bold;
@@ -69,11 +74,11 @@ body {
     align-self: center;
     border: none;
     margin-top: 1rem;
+    transition: all 0.3s ease-in-out;
 }
 .btn-primary {
     background-color: transparent;
     border: 1px solid #fff;
-    transition: background-color .5s;
 }
 .btn-primary:hover {
     background-color: #fff;
@@ -82,7 +87,6 @@ body {
 .btn-second {
     background-color: #000000;
     border: 1px solid #ffffff;
-    transition: background-color .5s;
 }
 .btn-second:hover {
     background-color: #fff;
@@ -91,6 +95,9 @@ body {
 }
 .first-content {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease-in-out;
 }
 .first-content .second-column {
     z-index: 11;
@@ -99,6 +106,8 @@ body {
     text-align: center;
     width: 40%;
     z-index: 10;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 .second-column {
     width: 60%;
@@ -143,6 +152,9 @@ body {
     width: 100%;
     border: none;
     background-color: #ecf0f1;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding-left: 10px;
 }
 input:-webkit-autofill 
 {    
@@ -154,17 +166,20 @@ input:-webkit-autofill
     display: flex;
     align-items: center;
     margin: 8px;
+    border-radius: 8px;
 }
 .icon-modify {
     color: #7f8c8d;
-    padding: 0 5px;
+    padding: 0 10px;
 }
 
 /* second content*/
-
 .second-content {
     position: absolute;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1s ease-in-out;
 }
 .second-content .first-column {
     order: 2;
@@ -184,10 +199,13 @@ input:-webkit-autofill
     text-transform: capitalize;
 }
 
-
-
 .sign-in-js .first-content .first-column {
     z-index: -1;
+    opacity: 0;
+}
+
+.sign-in-js .second-content {
+    opacity: 1;
 }
 
 .sign-in-js .second-content .second-column {
@@ -203,20 +221,23 @@ input:-webkit-autofill
     border-bottom-left-radius: 0;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    animation: slidein 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-
+    animation: slidein 1s ease-in-out;
     z-index: 12;
 }
 
 .sign-up-js .content::before {
-    animation: slideout 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
-
+    animation: slideout 1s ease-in-out;
     z-index: 12;
 }
 
 .sign-up-js .second-content .first-column,
 .sign-up-js .second-content .second-column {
     z-index: -1;
+    opacity: 0;
+}
+
+.sign-up-js .first-content {
+    opacity: 1;
 }
 
 .sign-up-js .first-content .second-column {
@@ -227,43 +248,34 @@ input:-webkit-autofill
     z-index: 13;    
 }
 
-
 /* DESLOCAMENTO CONTEÚDO ATRÁS DO CONTENT:BEFORE*/
 .sign-in-js .first-content .second-column {
-
     z-index: -1;
     position: relative;
-    animation: deslocamentoEsq 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: deslocamentoEsq 1s ease-in-out;
 }
 
 .sign-up-js .second-content .second-column {
     position: relative;
     z-index: -1;
-    animation: deslocamentoDir 1.3s; /*MODIFIQUEI DE 3s PARA 1.3s*/
+    animation: deslocamentoDir 1s ease-in-out;
 }
 
-/*ANIMAÇÃOO CSS PARA O CONTEÚDO*/
-
+/*ANIMAÇÃO CSS PARA O CONTEÚDO*/
 @keyframes deslocamentoEsq {
-
     from {
         left: 0;
         opacity: 1;
         z-index: 12;
     }
-
     25% {
         left: -80px;
         opacity: .5;
-        /* z-index: 12; NÃO HÁ NECESSIDADE */
     }
-
     50% {
         left: -100px;
         opacity: .2;
-        /* z-index: 12; NÃO HÁ NECESSIDADE */
     }
-
     to {
         left: -110px;
         opacity: 0;
@@ -271,56 +283,40 @@ input:-webkit-autofill
     }
 }
 
-
 @keyframes deslocamentoDir {
-
     from {
         left: 0;
         z-index: 12;
     }
-
     25% {
         left: 80px;
-        /* z-index: 12;  NÃO HÁ NECESSIDADE*/
     }
-
     50% {
         left: 100px;
-        /* z-index: 12; NÃO HÁ NECESSIDADE*/
-        /* background-color: yellow;  Exemplo que dei no vídeo*/
     }
-
     to {
         left: 110px;
         z-index: -1;
     }
 }
 
-
-/*ANIMAÇÃO CSS*/
-
 @keyframes slidein {
-
     from {
         left: 0;
         width: 40%;
     }
-
     25% {
         left: 5%;
         width: 50%;
     }
-
     50% {
         left: 25%;
         width: 60%;
     }
-
     75% {
         left: 45%;
         width: 50%;
     }
-
     to {
         left: 60%;
         width: 40%;
@@ -328,31 +324,58 @@ input:-webkit-autofill
 }
 
 @keyframes slideout {
-
     from {
         left: 60%;
         width: 40%;
     }
-
     25% {
         left: 45%;
         width: 50%;
     }
-
     50% {
         left: 25%;
         width: 60%;
     }
-
     75% {
         left: 5%;
         width: 50%;
     }
-
     to {
         left: 0;
         width: 40%;
     }
+}
+
+/* Animação fade-in e fade-out */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 1s ease-in-out forwards;
+}
+
+.initial-load {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 /*VERSÃO MOBILE*/
@@ -381,125 +404,108 @@ input:-webkit-autofill
         top: 60%;
         left: 0;
         border-radius: 0;
-
+        animation: slidein 1s ease-in-out;
     }
 
-    .form {
-        width: 90%;
+    .sign-in-js .first-content .second-column {
+        z-index: -1;
+        position: relative;
+        animation: deslocamentoEsq 1s ease-in-out;
     }
-    
-    /* ANIMAÇÃO MOBILE CSS*/
+
+    .sign-up-js .content::before {
+        animation: slideout 1s ease-in-out;
+    }
+
+    .sign-up-js .second-content .second-column {
+        position: relative;
+        z-index: -1;
+        animation: deslocamentoDir 1s ease-in-out;
+    }
 
     @keyframes deslocamentoEsq {
-
         from {
             top: 0;
             opacity: 1;
             z-index: 12;
         }
-    
         25% {
             top: -80px;
             opacity: .5;
-            /* z-index: 12; NÃO HÁ NECESSIDADE */
         }
-    
         50% {
             top: -100px;
             opacity: .2;
-            /* z-index: 12; NÃO HÁ NECESSIDADE */
         }
-    
         to {
             top: -110px;
             opacity: 0;
             z-index: -1;
         }
     }
-    
-    
+
     @keyframes deslocamentoDir {
-    
         from {
             top: 0;
             z-index: 12;
         }
-    
         25% {
             top: 80px;
-            /* z-index: 12;  NÃO HÁ NECESSIDADE*/
         }
-    
         50% {
             top: 100px;
-            /* z-index: 12; NÃO HÁ NECESSIDADE*/
-            /* background-color: yellow;  Exemplo que dei no vídeo*/
         }
-    
         to {
             top: 110px;
             z-index: -1;
         }
     }
-    
-    
-    
+
     @keyframes slidein {
-    
         from {
             top: 0;
             height: 40%;
         }
-    
         25% {
             top: 5%;
             height: 50%;
         }
-    
         50% {
             top: 25%;
             height: 60%;
         }
-    
         75% {
             top: 45%;
             height: 50%;
         }
-    
         to {
             top: 60%;
             height: 40%;
         }
     }
-    
+
     @keyframes slideout {
-    
         from {
             top: 60%;
             height: 40%;
         }
-    
         25% {
             top: 45%;
             height: 50%;
         }
-    
         50% {
             top: 25%;
             height: 60%;
         }
-    
         75% {
             top: 5%;
             height: 50%;
         }
-    
         to {
             top: 0;
             height: 40%;
         }
     }
-   
 }
 
 @media screen and (max-width: 740px) {
@@ -515,18 +521,27 @@ input:-webkit-autofill
 }
 
 .first-column {
-    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .image-wrapper {
-    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px; /* Ajuste conforme necessário */
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
 .image-wrapper img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da div */
-    max-height: 200px; /* Ajuste conforme necessário */
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.title-primary, .description-primary {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }

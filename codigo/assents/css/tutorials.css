@@ -1,0 +1,207 @@
+/* Paleta de cores */
+:root {
+    --primary-color: #4caf50;
+    --secondary-color: #3a3a3a;
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --hover-color: #388e3c;
+    --button-background: #4caf50;
+    --button-hover: #388e3c;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fontes e Tipografia */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
+}
+
+.container {
+    background-color: var(--secondary-color);
+    padding: 30px;
+    margin: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    flex-grow: 1;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5em;
+    letter-spacing: 1.2px;
+}
+
+.logo-left, .logo-right {
+    width: 100px; /* Aumentando a largura */
+    height: auto;
+}
+
+h2 {
+    margin-bottom: 30px;
+    color: var(--text-color);
+    font-weight: 300;
+    font-size: 1.8em;
+}
+
+.main-video {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.main-video video {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+#back-to-intro {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(to right, var(--button-background), var(--hover-color));
+    border: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    transition: background 0.3s, transform 0.3s;
+}
+
+#back-to-intro:hover {
+    background: linear-gradient(to right, var(--hover-color), var(--button-background));
+    transform: scale(1.1);
+}
+
+.video-thumbnails {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    margin: 10px;
+    cursor: pointer;
+    width: 30%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail video {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.thumbnail p {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Estilizando as barras laterais */
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    background-color: var(--secondary-color);
+    padding-top: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.left-sidebar {
+    left: 0;
+}
+
+.right-sidebar {
+    right: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.sidebar ul li a i {
+    font-size: 24px;
+}
+
+.sidebar ul li a span {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .thumbnail {
+        width: 45%;
+    }
+
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .thumbnail {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 40px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+}
