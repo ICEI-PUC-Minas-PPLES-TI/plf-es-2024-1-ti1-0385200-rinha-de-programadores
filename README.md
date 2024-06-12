@@ -9,7 +9,6 @@
 * Fernando Dantas Gomes Leite
 * Mateus Araujo Santos
 * Vitor Costa Vianna
-* Vitor Lichter Sampaio
 
 ## Professores responsáveis
 
