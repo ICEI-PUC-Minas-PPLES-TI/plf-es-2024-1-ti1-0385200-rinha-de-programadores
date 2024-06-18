@@ -1,4 +1,18 @@
-main{
-    margin: 80px !important;
+/* Default styles for larger screens */
+main {
+    margin: 80px;
     color: #4caf50;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    main {
+        margin: 40px; /* Reduced margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 20px; /* Further reduced margin for very small screens */
+    }
 }

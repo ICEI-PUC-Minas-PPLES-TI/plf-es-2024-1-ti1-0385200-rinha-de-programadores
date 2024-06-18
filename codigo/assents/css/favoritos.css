@@ -53,3 +53,32 @@ header h1{
     align-items: left;
     
 }
+
+@media (max-width: 1024px){
+    header {
+        flex-direction: column;
+        align-items: center; /* Changed from flex-start to center */
+        text-align: center;
+    }
+    
+    .logo {
+        font-size: 1.5rem; /* Adjusted from 20px to be more responsive */
+    }
+    
+    #titulo {
+        font-size: 1.25rem; /* Adjusted for better readability on smaller screens */
+    }
+    
+    img {
+        width: 15%; /* Increased from 8% for better visibility */
+        /* Removed !important tag to avoid overriding other important styles */
+    }
+    
+    h1 {
+        font-size: 1rem; /* Adjusted from 10px for consistency */
+    }
+    
+    main {
+        margin-left: 0;
+    }
+}
