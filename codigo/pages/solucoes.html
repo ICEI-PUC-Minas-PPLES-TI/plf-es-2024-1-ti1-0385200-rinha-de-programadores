@@ -126,12 +126,12 @@
             // Remove o contato dos favoritos
             favoritos = favoritos.filter(f => f.id !== id);
             localStorage.setItem('favoritos', JSON.stringify(favoritos));
-            document.getElementById('popup-text').innerText = `O desafio ${contato.titulo} foi removido dos favoritos!`;
+            document.getElementById('popup-text').innerText = `A solução ${contato.titulo} foi removida dos favoritos!`;
         } else {
             // Adiciona o contato aos favoritos
             favoritos.push(contato);
             localStorage.setItem('favoritos', JSON.stringify(favoritos));
-            document.getElementById('popup-text').innerText = `O desafio ${contato.titulo} foi adicionado aos favoritos!`;
+            document.getElementById('popup-text').innerText = `A solução ${contato.titulo} foi adicionada aos favoritos!`;
         }
 
         // Atualiza o ícone do botão para estrela cheia ou vazia dependendo do estado de favorito
