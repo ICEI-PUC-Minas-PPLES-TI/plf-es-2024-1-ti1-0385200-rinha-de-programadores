@@ -7,13 +7,13 @@ inputQuestion.addEventListener("keypress", (e) => {
     }
 });
 
-const OPENAI_API_KEY = "sk-proj-YQU8EeEC8j3zKOrJfZsyT3BlbkFJmJHp3ghP8fElRGtIVc7G";
+const OPENAI_API_KEY = " ";  // Colocar a chave da api entre as aspas
 
 async function SendQuestion() {
     const SQuestion = inputQuestion.value;
 
     try {
-        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        const response = await fetch(" ", {   //https://api.openai.com/v1/chat/completions colocar entre aspas
             method: "POST",
             headers: {
                 "Accept": "application/json",
