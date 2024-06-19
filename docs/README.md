@@ -90,25 +90,39 @@ Indústria de TI: Inclui empresas locais e startups que podem se interessar pelo
 Persona 1: João Pedro
 
 Nome: João Pedro
+
 Idade: 19 anos
+
 Localização: Nova Lima
+
 Interesses: Atividades ao ar livre, esportes, desafios tecnológicos
+
 História:
 João Pedro é um jovem de Nova Lima, sempre apaixonado por atividades externas, como trilhas, acampamentos e diversos esportes. Durante a pandemia, ele teve que se adaptar ao uso de tecnologia para acompanhar as aulas online, mas fora isso, sua interação com o mundo digital era mínima. Recentemente, João Pedro conheceu um novo grupo de amigos que, assim como ele, são entusiastas por desafios e competições. Eles apresentaram a ele a plataforma Code Clash, que combina desafios de programação com um design atraente, no estilo gamer, e elementos de quiz. Inicialmente, João Pedro ficou cético, mas ao perceber que podia aplicar sua competitividade e habilidades de resolução de problemas em um novo contexto, ele decidiu dar uma chance. Code Clash rapidamente se tornou uma de suas atividades favoritas, onde ele pode competir em diferentes linguagens de programação, testar seus conhecimentos e, ao mesmo tempo, desenvolver novas habilidades tecnológicas de forma divertida e envolvente. Agora, João Pedro se vê não só apreciando os desafios ao ar livre, mas também se dedicando com entusiasmo aos desafios digitais, encontrando um equilíbrio perfeito entre seus interesses e novas paixões.
 
 Persona 2: Joana
+
 Nome: Joana
+
 Idade: 20 anos
+
 Localização: Buritis
+
 Interesses: Jogos eletrônicos, Engenharia da Computação
+
 História:
 Joana sempre teve uma paixão por jogos eletrônicos, o que a levou a cursar Engenharia da Computação. No início, ela conseguiu acompanhar as matérias com facilidade. No entanto, durante um intercâmbio, ela perdeu um mês de aulas importantes. Para recuperar o tempo perdido e se igualar aos seus colegas de classe, Joana decidiu usar a plataforma de desafios de programação. A ferramenta a ajudou a revisar e aprender rapidamente o conteúdo necessário, permitindo que ela continuasse a acompanhar o curso com confiança.
 
 Persona 3: Gabriel
+
 Nome: Gabriel
+
 Idade: 18 anos
+
 Localização: Savassi
+
 Interesses: Competição, Engenharia de Software
+
 História:
 Gabriel sempre foi extremamente competitivo desde a infância. Essa característica influenciou sua decisão de cursar Engenharia de Software. No entanto, ele percebeu que o curso não proporcionava a adrenalina e as emoções que ele sentia em competições. A falta desse elemento competitivo fez com que ele perdesse a motivação para tirar notas altas, pois para ele, alcançar a nota mínima ou máxima gerava a mesma sensação. Para reviver sua paixão, Gabriel encontrou na plataforma de desafios de programação uma forma de unir ensino e competição. Isso renovou seu entusiasmo pelo curso, fazendo com que ele se empenhasse mais e se destacasse academicamente.
 
@@ -197,11 +211,6 @@ https://app.flowmapp.com/share/projects/d30f0582-7d4f-4887-93fa-c094d53cf580/sit
 
 
 ## Wireframes
-
-Wireframes com maior fidelidade:
-https://app.uizard.io/p/f77c7097
-![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/48618d02-19ab-4feb-b170-9aa7c5888096)
-![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/2d6b6dcb-b8ee-486d-948f-3a9b890cd4e4)
 
 Wireframe baixa fidelidade:
 https://app.uizard.io/p/604fdfe9
