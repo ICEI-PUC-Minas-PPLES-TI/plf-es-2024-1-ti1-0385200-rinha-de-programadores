@@ -22,7 +22,7 @@ function prevSlide() {
 }
 
 function autoSlide() {
-    setInterval(nextSlide, 5000); // Muda de slide a cada 30 segundos
+    setInterval(nextSlide, 5000); // Muda de slide a cada 5 segundos
 }
 
 // Inicializa o carrossel
@@ -42,6 +42,7 @@ function getIconForLanguage(language) {
             return ''; // Ícone padrão (ou vazio se não houver ícone específico)
     }
 }
+
 function getRandomCardByDifficulty(data, difficulty) {
     const filteredData = data.filter(item => item.dificuldade.toLowerCase() === difficulty.toLowerCase());
     if (filteredData.length === 0) {
@@ -52,15 +53,13 @@ function getRandomCardByDifficulty(data, difficulty) {
     return filteredData[randomIndex];
 }
 
-
-
 // Fetch para obter dados da API e criar cards
 fetch('https://3204cb85-f4c9-4130-95a0-a178117080a2-00-1a4tc3cfi75j1.picard.replit.dev/contatos')
     .then(response => response.json())
     .then(data => {
         console.log('Dados recebidos da API:', data); // Adicionado para depuração
         const difficulties = ['fácil', 'médio', 'difícil'];
-        const cardContainer = document.querySelector('.card-conteiner'); // Seleciona o contêiner de cards na sua página
+        const cardContainer = document.querySelector('.card-container'); // Seleciona o contêiner de cards na sua página
         
         difficulties.forEach(difficulty => {
             const randomCard = getRandomCardByDifficulty(data, difficulty);
