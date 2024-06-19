@@ -1,6 +1,7 @@
-## Programação Competitiva
+## CODE CLASH
 
- O projeto foi concebido com a finalidade de aprimorar o ensino de programação e torná-lo mais atraente por meio de uma abordagem competitiva, especialmente para aqueles que enfrentam maiores desafios no aprendizado.
+O principal objetivo do Code Clasht é transformar o aprendizado de programação em uma experiência envolvente e divertida, ao mesmo tempo que proporciona uma base sólida de conhecimentos técnicos. Ao integrar elementos de gamificação e aprendizagem interativa, a plataforma busca motivar os usuários a continuar aprimorando suas habilidades e alcançar a excelência na programação.
+
 
 ## Alunos integrantes da equipe
 
