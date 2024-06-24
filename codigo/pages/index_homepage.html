@@ -1,15 +1,16 @@
-<body>
-  <header>
-    <html lang="pt-br">
-    <meta charset="UTF-8"> 
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Homepage</title>
-    <div class="logo" id="logo-escrito"><a href="../pages/index_homepage.html"> CODECLASH <img
-          src="../assents/images/logo.png" alt="Logo CodeClash"> </a></div>
-    <div class="butaologin"> <a href="../pages/cadastro.html"> <button type="button" class="botao-verde">Cadastro/Login
-          <i class="fa-solid fa-arrow-right"></i></button></a> </div>
     <link href="../assents/css/style_homepage.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo" id="logo-escrito"><a href="../pages/index_homepage.html"> CODECLASH <img src="../assents/images/logo.png" alt="Logo CodeClash"> </a></div>
+    <div class="butaologin"> <a href="../pages/cadastro.html"> <button type="button" class="botao-verde">Cadastro/Login <i class="fa-solid fa-arrow-right"></i></button></a> </div>
     <script src="https://kit.fontawesome.com/a2fceb8262.js" crossorigin="anonymous"></script>
   </header>
   <aside>
@@ -29,62 +30,20 @@
   </aside>
 
   <main>
-
-    <div class="Conteudo_principal">
+    <div class="conteudo_principal">
       <h3>Desafios recomendados: </h3>
-
-      <div class="card-conteiner">
-
-      <!--  <div class="card" id="card1">
-          <div class="card-border-top">
-          </div>
-          <div class="icones-card">
-            <i class="fa-brands fa-js"></i>
-          </div>
-          <span> JavaScript</span>
-          <p class="job">Facil</p>
-          <button> Escolher Desafio </button>
-        </div>
-
-        <div class="card" id="card2">
-          <div class="card-border-top">
-          </div>
-          <div class="icones-card">
-            <i class="fa-solid fa-c"></i>
-          </div>
-          <span> C</span>
-          <p class="job"> Medio</p>
-          <button> Escolher Desafio
-          </button>
-        </div>
-
-        <div class="card" id="card3">
-          <div class="card-border-top">
-          </div>
-          <div class="icones-card">
-            <i class="fa-brands fa-java"></i>
-          </div>
-          <span>Java</span>
-          <p class="job"> Dificil</p>
-          <button> Escolher Desafio </button>
-        </div> 
--->
+      <div class="card-container">
+        <!-- Cards serão carregados aqui -->
       </div>
-
-
       <br>
-
-
       <div class="carousel-container">
         <div class="carousel">
           <div class="carousel-slide">
             <div class="video-container">
               <a href="../pages/cadastro.html">
-                <video autoplay loop muted src="../assents/videos/Banner cadastrologin.mp4  "
-                  type="banner-desafios"></video>
+                <video autoplay loop muted src="../assents/videos/Banner cadastrologin.mp4" type="banner-desafios"></video>
               </a>
             </div>
-
           </div>
           <div class="carousel-slide">
             <div class="video-container">
@@ -99,21 +58,35 @@
                 <video autoplay loop muted src="../assents/videos/Banner tutoriais.mp4" type="banner-tutorial"></video>
               </a>
             </div>
-
           </div>
         </div>
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <button class="next" onclick="nextSlide()">&#10095;</button>
       </div>
-
+    </div>
   </main>
 
   <footer>
     <p><u>&copy; 2024 Codeclash</u></p>
   </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var loggedInUserId = localStorage.getItem("loggedInUserId");
+        if (!loggedInUserId) {
+            // Se não houver usuário logado, redireciona para a página de login
+            window.location.href = 'cadastro.html';
+        } else {
+            // Exibe mensagem de login, se houver
+            var loginMessage = localStorage.getItem("loginMessage");
+            if (loginMessage) {
+                alert(loginMessage);
+                localStorage.removeItem("loginMessage");
+            }
+        }
+    });
+  </script>
   <script src="../assents/js/app.js"></script>
   <script src="../assents/js/homepage.js"></script>
 </body>
-
 </html>

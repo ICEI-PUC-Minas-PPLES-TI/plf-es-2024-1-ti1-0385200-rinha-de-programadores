@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const videoTitle = document.getElementById('video-title');
     const backToIntroButton = document.getElementById('back-to-intro');
 
-    const introVideoSrc = 'videos/Ismael full pistola corrigido.mp4';
+    const introVideoSrc = '../assents/videos/Banner tutoriais.mp4';
     const introVideoTitle = 'Vídeo Introdução';
 
     thumbnails.forEach(thumbnail => {

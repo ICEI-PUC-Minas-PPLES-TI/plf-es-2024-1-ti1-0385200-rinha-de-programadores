@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparar Código</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
-    <link rel = "stylesheet" href = "/codigo/assents/css/comparacao.css"
+    <link rel="stylesheet" href="/codigo/assents/css/comparacao.css">
 </head>
 <body>
     <div class="container">
@@ -14,9 +14,10 @@
             <h2>Seu Código</h2>
             <pre id="user-code"></pre>
         </div>
+        <button id="correct-code-btn">Corrigir Código</button>
         <div class="code-section">
-            <h2>Código Correto</h2>
-            <textarea id="correct-code" placeholder="Insira o código correto aqui..."></textarea>
+            <h2>Código Corrigido</h2>
+            <pre id="corrected-code"></pre>
         </div>
     </div>
     <script>
@@ -25,6 +26,7 @@
             document.getElementById('user-code').textContent = userCode;
         });
     </script>
+    <script src="../assents/js/comparacao.js"></script>
 </body>
 </html>
 

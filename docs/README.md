@@ -12,40 +12,38 @@ A documentação do projeto inclui as seguintes seções:
 6. FAQ (Questões frequentes)
 7. Referências Bibliográficas
 
-O template para o site é estruturado e permite que a equipe evolua a documentação do projeto à medida que avance no desenvolvimento.
-
 # Orientações gerais
 
 Esta seção traz explicações breves sobre o conjunto de artefatos que precisam ser incluídos na documentação do projeto com uma conjunto de links importantes para que se entenda como criar cada coisa. 
 
+
 ## Problema
 
-
-Atualmente a área de programação está em alta , porém grande parte das pessoas que começam a estudar este conteúdo desistem no meio do caminho ou possuem uma enorme dificuldade para evoluir. Dessa forma se faz necessário ferramentas para alavancar o conhecimento e habilidades de um programador iniciante!
-
+Atualmente, a área de programação está em alta demanda, refletindo a crescente importância das competências tecnológicas no mercado de trabalho. No entanto, muitos indivíduos que iniciam seus estudos em programação enfrentam desafios significativos, resultando em desistências frequentes ou em dificuldades para progredir. Este cenário evidencia a necessidade urgente de ferramentas que possam impulsionar e incentivar o conhecimento e as habilidades de programadores iniciantes. É nesse contexto que se insere o Code Clash, uma plataforma concebida para enfrentar esses desafios de frente. 
 
 
 ## Objetivos
 
 Obejetivo geral : 
  
- 
- Desenvolver um software para auxiliar estudantes de programação que pensam  em desistir no meio do caminho ou possuem uma enorme dificuldade para evoluir
-
+Desenvolver um software para auxiliar estudantes de programação que enfrentam dificuldades em progredir ou consideram desistir, proporcionando suporte e motivação através de métodos inovadores.
 
 Obejtivos específicos : 
 
- Tornar o estudo de algoritmos e códigos mais "divertido" por meio da competição.
+ Tornar o Estudo Mais Atraente: Utilizar a gamificação, quizzes e uma variedade de desafios para transformar o estudo de algoritmos e códigos em uma experiência mais divertida e envolvente.
 
- Auxiliar e alavancar o desenvolvimento de programadores com dicas e recompensas no  jogo.
+Promover o Desenvolvimento Contínuo: Oferecer desafios de diferentes níveis de dificuldade, acompanhados de feedbacks, para auxiliar e alavancar o desenvolvimento das habilidades dos programadores.
 
+Estimular a Persistência: Criar um ambiente de aprendizado que mantenha os estudantes motivados e engajados, incentivando a continuidade e a perseverança nos estudos de programação.
 
 
 ## Justificativa
 
+A relevância do desenvolvimento deste software reside no fato de que a área de Tecnologia da Informação (TI) está em constante crescimento e transformação. Este cenário dinâmico exige profissionais altamente qualificados, porém, uma grande porcentagem das pessoas que iniciam estudos em programação desistem antes de alcançar a qualificação necessária. Esta elevada taxa de desistência é uma preocupação significativa para o mercado de trabalho, que enfrenta uma escassez de talentos preparados para atender às suas demandas.
 
-A importância do tema abordado para a construção do software se diz a respeito que a área de TI vem crescendo cada vez mais e sofrendo diversas transformações constantemente, é algo que preocupa muito é o mercado de trabalho já que grande porcentagem das pessoas que começam a estudar programação desistem antes de se tornarem qualificados. Por isso a ideia desta aplicação Web é ajudar estudantes de uma forma mais atrativa como o mundo dos games, tornando o aprendizado mais dinâmico e competitivo e os incentivando a manter o interesse na área e algum dia se tornar um profissional muito bem qualificado no mercado de trabalho.
+Assim, a proposta desta aplicação web é essencial para abordar esse desafio, oferecendo um meio mais atrativo e envolvente de aprendizado, inspirado no mundo dos games. Ao integrar elementos de gamificação, quizzes e diversos desafios, o software transforma o estudo da programação em uma experiência mais agrádavel. Este formato inovador não só torna o aprendizado mais acessível e agradável, mas também incentiva os estudantes a manterem o interesse e a perseverança, aumentando suas chances de se tornarem profissionais altamente qualificados.
 
+Em última análise, a plataforma busca não apenas reduzir a taxa de desistência entre os estudantes de programação, mas também contribuir para a formação de uma nova geração de programadores preparados para enfrentar os desafios do mercado de trabalho atual e futuro.
 
 Alguns dos links usados para a formação da opinião e do problema apresentado:
 
@@ -57,76 +55,118 @@ https://www.linkedin.com/pulse/por-que-maioria-dos-programadores-desistem-albér
 
 ## Público-Alvo
 
-O público-alvo do nosso software são estudantes, em sua maioria jovens entre 17 e 27 anos, da área de TI, mais especificamente a programação. Nosso principal objetivo é ajudar os iniciantes no curso de graduação, ou seja, com o ensino médio completo, que desejam aumentar suas habilidades na área. A princípio, os usuários não precisarão ser os melhores em sua relação com a tecnologia, já que o intuito é ajudá-los a adquirir conhecimento.
+O público-alvo do nosso software consiste em estudantes, majoritariamente jovens entre 17 e 27 anos, da área de Tecnologia da Informação (TI), com foco específico na programação. Nosso principal objetivo é apoiar iniciantes no curso de graduação, ou seja, aqueles que já possuem o ensino médio completo e buscam aprimorar suas habilidades na programação. A plataforma é acessível a qualquer pessoa com interesse em aprender ou aprimorar suas habilidades de programação de forma estruturada e agradável, pois o intuito do software é justamente auxiliá-los na aquisição e no desenvolvimento de conhecimento e competências na área.
 
 
 Mapa de stakeholders
 
-Pessoas fundamentais :
+Pessoas Fundamentais:
 
-- Programadores: Eles são os participantes diretos da competição e usuários principais do sistema.
-- Organizadores da Competição: Eles planejam, coordenam e executam o evento, utilizando o sistema para gerenciar inscrições, submissões e resultados.
+Estudantes de Programação: São os participantes diretos e principais usuários do sistema. Eles utilizam a plataforma para se inscrever, resolver desafios e receber feedback sobre suas soluções.
+
+Professores e Coordenadores: Planejam, coordenam e gerenciam o uso do software, utilizando-o para criar desafios, acompanhar o progresso dos alunos e avaliar resultados.
 
 
-Pessoas Importantes
+Pessoas Importantes:
 
-- Patrocinadores: Financiam o evento e podem querer influenciar o formato ou os resultados para seus próprios fins.
-- Plataformas de Divulgação: Incluem sites, mídias sociais e apps onde o evento é promovido e transmitido ao vivo.
-- Comunidade de Desenvolvimento de Software: Composta por outros programadores, empresas de TI e educadores que podem não estar diretamente envolvidos mas têm interesse no sucesso e inovação da competição.
+Patrocinadores: Podem fornecer recursos financeiros ou materiais para o desenvolvimento do software e dos eventos relacionados. Eles buscam visibilidade e associação com a inovação educacional.
 
-Pessoas influenciadoras:
+Plataformas de Divulgação: Incluem sites, redes sociais e canais de comunicação da faculdade e os eventos que são promovidos. Eles ajudam a atrair mais usuários e aumentar a visibilidade do projeto.
 
-- Reguladores de Tecnologia e Competições: Podem impor regras que afetam a organização e a execução da competição.
-- Opinião Pública/Comunidade Online: Seus membros podem afetar a percepção do evento por meio de fóruns, redes sociais e blogs.
-- Indústria de Software: Inclui grandes empresas de tecnologia e startups que podem usar a competição como uma forma de talent scouting ou para identificar novas tendências e inovações.
+Comunidade Acadêmica: Composta por outros estudantes, professores de TI e administradores da faculdade que, embora não estejam diretamente envolvidos, têm interesse no sucesso e inovação do projeto. Eles podem fornecer suporte, feedback e promover o software dentro e fora da instituição.
+
+
+Pessoas Influenciadoras:
+
+Reguladores Acadêmicos: Podem impor diretrizes e padrões que afetam o desenvolvimento e uso do software. Eles garantem a conformidade com as políticas educacionais da instituição.
+
+Opinião Pública e Comunidade Online: Inclui estudantes, professores e outros membros da faculdade que discutem e compartilham suas opiniões sobre o software em fóruns, redes sociais e blogs. Suas opiniões podem influenciar a percepção e aceitação do projeto.
+
+Indústria de TI: Inclui empresas locais e startups que podem se interessar pelo software como uma ferramenta de formação de novos talentos. Eles podem colaborar com a faculdade, oferecendo estágios, mentoria ou parcerias para eventos.
+
 
 ## Personas
 
-Pessoa 1: João Pedro é um morador de Nova Lima com 19 anos que sempre se interessou em atividades externas, como fazer trilhas, acampar e praticar esportes no geral. O máximo de tecnologia a que ele recorreu foi um laptop durante o período do ensino virtual na pandemia.
-Recentemente, João começou a namorar uma garota que cursava Ciência da Computação. A relação entre os dois sempre foi boa, porém, ele percebeu que sua namorada sempre mostrou um interesse aos seus passatempos. Infelizmente, ele não se esforçava tanto em programação, por isso ele mudou e começou a aprender a programar usando a rinha de programadores, para assim surpreender sua namorada e mostrar que o interesse dos passatempos de um do outro é recíproco.
+Persona 1: João Pedro
 
-Pessoa 2: Joana é uma moradora do Buritis com 20 anos. Durante toda sua vida, ela tinha felicidade enquanto mexia com jogos eletrônicos, por esse motivo ela decidiu ingressar no curso de Engenharia da Computação. No início, ela conseguiu acompanhar facilmente as matérias, contudo, ela participou de um intercâmbio e por isso perdeu 1 mês de matérias importantes.
-Ela então decidiu utilizar a rinha de computação para rapidamente reter a informação necessária para alcançar seus colegas de sala na matéria que ela perdeu.
+Nome: João Pedro
 
-Pessoa 3: Gabriel é um morador da Savassi com 18 anos. Durante sua infância, ele sempre teve o desejo de ganhar, tornando-o muito competitivo. Por outros motivos externos, ele decidiu cursar Engenharia de Software. O curso estava tudo como previsto, entretanto, para ele faltava algo muito importante, a adrenalina e todas as emoções que vinham com o ato de competir. Isso fez com que ele perdesse a motivação de tirar notas altas, pois, a despeito de tudo, a sensação de tirar a nota mínima e a total era a mesma. Para reviver sua garra, ele fundiu os mundos de competição e ensino. Com a rinha de programação, ele voltou a gostar realmente de seu curso e se empenhar mais nele.
+Idade: 19 anos
+
+Localização: Nova Lima
+
+Interesses: Atividades ao ar livre, esportes, desafios tecnológicos
+
+História:
+João Pedro é um jovem de Nova Lima, sempre apaixonado por atividades externas, como trilhas, acampamentos e diversos esportes. Durante a pandemia, ele teve que se adaptar ao uso de tecnologia para acompanhar as aulas online, mas fora isso, sua interação com o mundo digital era mínima. Recentemente, João Pedro conheceu um novo grupo de amigos que, assim como ele, são entusiastas por desafios e competições. Eles apresentaram a ele a plataforma Code Clash, que combina desafios de programação com um design atraente, no estilo gamer, e elementos de quiz. Inicialmente, João Pedro ficou cético, mas ao perceber que podia aplicar sua competitividade e habilidades de resolução de problemas em um novo contexto, ele decidiu dar uma chance. Code Clash rapidamente se tornou uma de suas atividades favoritas, onde ele pode competir em diferentes linguagens de programação, testar seus conhecimentos e, ao mesmo tempo, desenvolver novas habilidades tecnológicas de forma divertida e envolvente. Agora, João Pedro se vê não só apreciando os desafios ao ar livre, mas também se dedicando com entusiasmo aos desafios digitais, encontrando um equilíbrio perfeito entre seus interesses e novas paixões.
+
+Persona 2: Joana
+
+Nome: Joana
+
+Idade: 20 anos
+
+Localização: Buritis
+
+Interesses: Jogos eletrônicos, Engenharia da Computação
+
+História:
+Joana sempre teve uma paixão por jogos eletrônicos, o que a levou a cursar Engenharia da Computação. No início, ela conseguiu acompanhar as matérias com facilidade. No entanto, durante um intercâmbio, ela perdeu um mês de aulas importantes. Para recuperar o tempo perdido e se igualar aos seus colegas de classe, Joana decidiu usar a plataforma de desafios de programação. A ferramenta a ajudou a revisar e aprender rapidamente o conteúdo necessário, permitindo que ela continuasse a acompanhar o curso com confiança.
+
+Persona 3: Gabriel
+
+Nome: Gabriel
+
+Idade: 18 anos
+
+Localização: Savassi
+
+Interesses: Competição, Engenharia de Software
+
+História:
+Gabriel sempre foi extremamente competitivo desde a infância. Essa característica influenciou sua decisão de cursar Engenharia de Software. No entanto, ele percebeu que o curso não proporcionava a adrenalina e as emoções que ele sentia em competições. A falta desse elemento competitivo fez com que ele perdesse a motivação para tirar notas altas, pois para ele, alcançar a nota mínima ou máxima gerava a mesma sensação. Para reviver sua paixão, Gabriel encontrou na plataforma de desafios de programação uma forma de unir ensino e competição. Isso renovou seu entusiasmo pelo curso, fazendo com que ele se empenhasse mais e se destacasse academicamente.
 
 ## Histórias de Usuários
 
-Como : (usuário)
-Quero : poder selecionar diferentes linguagens de programação
-Para : aprimorar minhas habilidades na linguagem X
+Como: usuário
+Quero: Favoritar os desafios que eu tiver interesse
+Para: poder voltar a eles sempre que quiser, facilitando o acompanhamento do meu progresso e revisão de conteúdos importantes.
 
-Como : (usuário)
-Quero : poder escolher o modo de jogo como casual ou competitivo 
-Para : para no casual aprimorar minhas habilidades sem se preocupar com o rank e aplicar no competitivo
+Como: usuário
+Quero: Cadastrar minha conta
+Para: conseguir visualizar meus desafios favoritos, salvar meu progresso e personalizar minha experiência na plataforma.
 
-Como : (usuário)
-Quero : cadastrar minha conta 
-Para : não perder meu progresso e visualizar meu rank atual
+Como: usuário
+Quero: Poder selecionar diferentes linguagens de programação
+Para: aprimorar minhas habilidades em linguagens específicas e expandir meu conhecimento em diversas áreas da programação.
 
-Como : (usuário)
-Quero : conseguir salvar meu login
-Para :  não perder tempo digitando o usuário/senha todas vez , agilizando o processo
+Como: usuário
+Quero: Poder selecionar diferentes dificuldades de desafios
+Para: aprimorar minhas habilidades e expandir meu conhecimento em diversas áreas da programação.
 
-Como : (usuário)
-Quero : conseguir visualizar o projeto final dos outros usuários 
-Para : aprender / pegar ideias / dicas 
+Como: usuário
+Quero: Conseguir salvar meu login
+Para: não perder tempo digitando o usuário/senha todas as vezes, agilizando o processo de acesso à plataforma e mantendo minha motivação.
 
-Como : (usuário)
-Quero :  No final da rodada receber meu código corrigido
-Para :  saber o que errei , e aprimorar e aprender 
+Como: usuário
+Quero: Saber se o desafio que eu enviei está correto
+Para: identificar erros, aprimorar minhas habilidades e aprender com o feedback, melhorando continuamente meu desempenho.
 
-Como : (usuário)
-Quero : dependendo do nivel do rank e do desafio receber dicas 
-Para : tornar a experiência mais agradável e tirar dúvidas
+Como: usuário
+Quero: Poder acessar uma área com tutoriais e dicas
+Para: tornar a experiência de aprendizado mais agradável, obter suporte quando necessário e esclarecer dúvidas de forma rápida e eficiente.
 
-Como: (usuário) 
-Quero: poder ganhar xp para subir de level.
-Para:me sentir motivado a programar.
+Como: usuário
+Quero: Receber recomendações de conteúdo para ver
+Para: melhorar meu código, descobrir novos desafios e expandir meu conhecimento de maneira personalizada e relevante.
 
-Como: (usuário) 
-Quero: Recomendações de conteúdo para ver
-Para: melhorar meu código
+Como: usuário
+Quero: Participar de quizzes sobre programação
+Para: testar meus conhecimentos, aprender de forma divertida e identificar áreas em que preciso melhorar.
+
+Como: usuário
+Quero: Visualizar minha pontuação imediatamente após completar um quiz
+Para: obter feedback instantâneo sobre meu desempenho.
 
 
 ## Requisitos
@@ -134,24 +174,14 @@ Para: melhorar meu código
 Requisitos Funcionais :
 
 RF-01 Cadastro de usuário / salvar o login
-
 RF-02 Seleção de diversas linguagens para o desafio
-
-RF-03 Seleção do modo de jogo
-
-RF-04 Ícone de perfil
-
-RF-05 Visualização do projeto dos outros usuários
-
-RF-06 Histórico de partidas
-
-RF-07 Área com vídeos e tutoriais para tirar as dúvidas
-
-RF-08 Seleção da dificuldade do desafio / easy or hard
-
-RF-09 Cronômetro para regir o tempo
-
-RF-10 Recompensa de xp para subir de level
+RF-03 Seleção de Nível de Dificuldade dos Desafios
+RF-04 Funcionalidade de Favoritar Desafios
+RF-05 Área com um quiz sobre as tres linguagens
+RF-07 Área de Vídeos e Tutoriais para Suporte
+RF-08 Seção de Soluções dos Desafios
+RF-09 Envio de Arquivos de Desafios com Verificação
+RF-10 Exibição de quantas questões foram acertadas no Quiz
 
 
 
@@ -161,8 +191,6 @@ RNF-01 Segurança / confiabilidade do login
 
 RNF-02 Desempenho rápido na correção dos códigos
 
-RNF-03 Atualização rápida do rank
-
 RNF-04-Compatível com google chrome, firefox, edge.
 
 RNF-05-Feito com HTML,CSS E JS 
@@ -171,7 +199,7 @@ RNF-06- Design responsivo
 
 RNF-07- O sistema será surportado nos dispositivos Desktop, Tablet e Smarthphone via navgegador
 
-RNF-08- O sistema usará banco de dados LOCALSTORAGE
+RNF-08- O sistema usará banco de dados LOCALSTORAGE e JSON SERVER
 
 
 
@@ -184,11 +212,6 @@ https://app.flowmapp.com/share/projects/d30f0582-7d4f-4887-93fa-c094d53cf580/sit
 
 ## Wireframes
 
-Wireframes com maior fidelidade:
-https://app.uizard.io/p/f77c7097
-![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/48618d02-19ab-4feb-b170-9aa7c5888096)
-![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/2d6b6dcb-b8ee-486d-948f-3a9b890cd4e4)
-
 Wireframe baixa fidelidade:
 https://app.uizard.io/p/604fdfe9
 
@@ -198,41 +221,65 @@ https://app.uizard.io/p/604fdfe9
 ![Notifications](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/5fcbbff7-d96b-4dcd-8f9e-97d6147f1c94)
 ![Search](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/d26858fb-ff48-4835-b1a2-b87d2b15b7af)
 
+##Solução Implementada
+
+Tela de cadastro e login
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/a4b909f9-0553-4687-a4a6-b273aa6895e4)
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/1c5658e9-cf14-46f4-ab33-9c2cb1b35dca)
+
+A home page do Code Clash é uma interface amigável e integrada que facilita o acesso a desafios e tutoriais de programação, tornando-a uma ferramenta valiosa para o aprendizado de programação
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/69e45ee6-8216-4ca7-a5cc-927ee402741d)
+
+A tela de desafios do Code Clash é uma interface integrada que facilita a busca, a seleção e a resolução de desafios de programação, e além de permitir favoritar o desafio
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/f3356cc9-f5b3-4474-a1a4-05a70d4763c2)
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/07c1a280-69f4-467f-96a1-79205dc06b81)
+
+A tela de quiz do Code Clash disponibiliza 15 questões de diversas dificuldade , com a opção de voltar e avançar entre as perguntase , reiniciar o quiz ao final, e mostrar seu resultado imediatamente ápos a conclusão do quiz.
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/8a8bd916-4904-473e-8730-a55045f7bfa3)
+
+Tela de visualização dos favoritos 
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/ba4b1180-0c82-459e-97dd-c0945ae1579c)
+
+Tela de tutoriais com videos disponiveis
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/823d1947-0f48-4b48-9e1f-ee5c8222fb0e)
+
+Tela explicando sobre o projeto
+![image](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/164224028/8d71e937-3456-47fa-810b-47f9e1f37ec2)
+
+
+
 
 ## Gestão de Projetos
 
-O projeto da disciplina Trabalho Interdisciplinar: Aplicações Web, desenvolvido pelo grupo
-“Rinha de programadores”, que tem como foco programação competitiva, teve o sprint 1
-concluído no prazo esperado, projeto tem previsão de ser apresentado 10/04 na aula da
-disciplina referente.
-A divisão de tarefas foi uma das práticas usadas para a conclusão eficaz do trabalho,
-visto que reduz o tempo gasto no total dividindo-o para cada aluno. A Gestão de Projetos foi
-destinada ao Mateus Araujo Santos, ao Vitor Lichter Sampaio e ao Antônio Loureiro foi
-destinado o wireframe, ao Antônio Loureiro revisão e auxilio em vários momentos do design Thinking, Ao Vitor Costa Vianna a
-documentação(scrum master) e os slides, ao Eliseu do Prado Chaves e ao Fernando Dantas Gomes Leite
-foi destinado o User flow.
-A gestão de configuração do projeto via GitHub aconteceu com cada indivíduo
-responsável pela parte destinada a ele enviando arquivos no prazo, para a organização,
-documentação e o registro serem feitos, facilitando o entendimento do requerente.
-Pesquisas foram necessárias para o entendimento do tema, abrangendo o conhecimento e
-incrementando novas metodologias usadas para o projeto.
-O design thinking foi essencial, elaborando primeiro as certezas, dúvidas e o que não
-havia conhecimento para solucionar o que era possível de usar e o que deveria ser testado
-e analisado, com o objetivo de implementar. Além disso, houve o mapeamento do
-público-alvo e a adaptação da estrutura e do modo de apresentar para atender a tais
-possíveis usuários.
-Terminando o sprintt 1, foram postados as partes de cada um no GitHub para a
-visualização do organizador, que realizou o trabalho, implementando as práticas do
-Framework Scrum, observando para ver se estava tudo de acordo, utilizando os critérios
-principais dessa prática, que são a Transparência, ou seja o solicitante deve estar ciente de
-todas partes do projeto, para isso o Gestor de Projetos, a Inspeção, que foi realizada por
-todos os integrantes do grupo, o que é indispensável pois as mudanças devem ser
-constatadas no final, para que novamente o solicitante saiba de tudo, e por fim, a
-adaptação, que citada mais cedo, foi realizada para melhorar a experiência do público.
+O projeto da disciplina Trabalho Interdisciplinar: Aplicações Web, desenvolvido pelo grupo "Rinha de Programadores", focado em um software que ajuda programadores a estudarem, concluiu o Sprint 4 dentro do prazo esperado. O projeto está previsto para ser apresentado em 26/06 na aula da disciplina referente. Este sprint finalizou todas as funcionalidades, a documentação completa e os vídeos de apresentação.
 
+A divisão de tarefas continuou sendo uma prática essencial para a conclusão eficaz do trabalho, reduzindo o tempo gasto ao dividir as responsabilidades entre os membros restantes do grupo. A Gestão de Projetos foi conduzida por Vitor Costa Vianna, a responsabilidade pela documentação (como Scrum Master) também ficou encarregado pelo Vitor Costa, enquanto Mateus Araujo Santos pela elaboração dos slides da apresentação final. Eliseu do Prado Chaves e Fernando Dantas Gomes Leite e contribuíram significativamente para outras áreas após a saída de Antônio Loureiro e Vitor Lichter Sampaio após o Sprint 1. Todos os participantes realizaram as demandas necessárias de requisitos que cada um precisou fazer para a integração do software.
+
+A gestão de configuração do projeto via GitHub manteve-se eficiente, com cada membro enviando seus arquivos no prazo, facilitando a organização, documentação e registro das atividades, o que beneficiou o entendimento do projeto por parte de todos os envolvidos.
+
+O design thinking permaneceu uma ferramenta fundamental, ajudando a definir certezas, identificar dúvidas e resolver lacunas de conhecimento. Isso permitiu uma melhor implementação das soluções necessárias. O mapeamento do público-alvo e a adaptação da estrutura e modo de apresentação foram contínuos, garantindo que as necessidades dos possíveis usuários fossem atendidas.
+
+No encerramento do Sprint 4, todas as partes do projeto foram postadas no GitHub para visualização do organizador. O gestor do projeto implementou as práticas do Framework Scrum, verificando se tudo estava de acordo com os principais critérios: Inspeção e Adaptação. A inspeção foi realizada por todos os integrantes restantes do grupo, assegurando que as mudanças necessárias fossem implementadas no final. A adaptação, já mencionada, foi realizada para melhorar a experiência do usuário.
+
+Responsabilidades do Sprint 4:
+
+Mateus Araujo Santos: Elaboração dos slides de apresentação ,coordenação geral,requisitos funcionais.
+Vitor Costa Vianna: Documentação final,revisão geral, requisitos funcionais coordenação e gestão geral.
+Eliseu do Prado Chaves: Testes de usabilidade, adapatação , vídeo de apresentaçaõ do projeto , requisitos funcionais.
+Fernando Dantas Gomes Leite: Requisitos funcionais ,testes de integração , integração final , coordenação e gestão geral.
+Entregáveis do Sprint 4:
+
+Funcionalidades Completas: 
+Todas as funcionalidades do sistema implementadas e funcionando.
+Documentação Completa: Documentação técnica e de usuário finalizadas e revisadas.
+Vídeos de Apresentação: Vídeos explicativos e demonstrativos preparados para a apresentação.
+Apresentação Final: Slides preparados para a apresentação do projeto na data marcada.
+Com a conclusão do Sprint 4, o projeto "Rinha de Programadores" está pronto para ser apresentado, cumprindo todos os requisitos estabelecidos e demonstrando um alto nível de qualidade e organização.
 
 
 ## Metodologia
+
+Este projeto demonstra a aplicação da metodologia Scrum em um projeto dividido em 4 sprints, com uma equipe de 4 pessoas. O Scrum é uma estrutura de gerenciamento ágil que promove a colaboração, a adaptabilidade e a entrega incremental de valor.
 
 |Ambiente|         |Plataforma|          |Links|
 |Wireframe         |Uizard               |http://Uizard.io     
@@ -248,7 +295,7 @@ adaptação, que citada mais cedo, foi realizada para melhorar a experiência do
 
 **Gestão de Projeto feita pelo Trello**
 
-https://trello.com/b/R098E9zf/kanbam-grupo
+[https://trello.com/b/R098E9zf/kanbam-grupo](https://lucid.app/lucidspark/be8ed373-da02-4ffd-874a-d62660197a0d/edit?invitationId=inv_5a434d1d-f522-4ada-b05e-9ca113e0dedd&page=0_0#)
 
  ![Imagem do WhatsApp de 2024-04-10 à(s) 09 46 22_38a6af31](https://github.com/ICEI-PUC-Minas-PPLES-TI/plf-es-2024-1-ti1-0385200-rinha-de-programadores/assets/145078231/a3bd6956-91ae-4b26-9a2e-5deef9cf43b7)
 

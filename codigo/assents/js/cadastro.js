@@ -18,6 +18,15 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         users.push(userData);
         localStorage.setItem("users", JSON.stringify(users));
+        return userId; // Retorna o ID do usuário
+    }
+
+    function storeLoggedInUser(userId) {
+        localStorage.setItem("loggedInUserId", userId);
+    }
+
+    function getLoggedInUser() {
+        return localStorage.getItem("loggedInUserId");
     }
 
     // Processar o envio do formulário de cadastro
@@ -27,9 +36,13 @@ document.addEventListener("DOMContentLoaded", function() {
         var email = document.querySelector('#email').value;
         var password = document.querySelector('#password').value;
         if (name && email && password) {
-            storeUserData(name, email, password);
+            var userId = storeUserData(name, email, password);
+            storeLoggedInUser(userId);
             document.getElementById('popup-text').innerText = "Cadastro realizado com sucesso!";
             popup.style.display = 'block';
+            setTimeout(() => {
+                window.location.href = '../pages/index_homepage.html';
+            }, 1500); // Pequeno atraso para mostrar o pop-up
         } else {
             document.getElementById('popup-text').innerText = "Preencha os campos corretamente.";
             popup.style.display = 'block';
@@ -44,9 +57,13 @@ document.addEventListener("DOMContentLoaded", function() {
         var users = JSON.parse(localStorage.getItem("users")) || [];
         var user = users.find(user => user.email === email && user.password === password);
         if (user) {
-            document.getElementById('popup-text').innerText = "O cadastro foi bem sucedido!";
+            storeLoggedInUser(user.id); // Armazena o ID do usuário logado
+            localStorage.setItem("loginMessage", `Usuário: ${user.name} logado com sucesso!`); // Armazena a mensagem de login
+            document.getElementById('popup-text').innerText = "Login realizado com sucesso!";
             popup.style.display = 'block';
-            window.location.href = '../pages/index_homepage.html';
+            setTimeout(() => {
+                window.location.href = '../pages/index_homepage.html';
+            }, 1500); // Pequeno atraso para mostrar o pop-up
         } else {
             document.getElementById('popup-text').innerText = "O login não está correto!";
             popup.style.display = 'block';
