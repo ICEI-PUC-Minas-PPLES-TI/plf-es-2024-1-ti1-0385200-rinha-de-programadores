@@ -17,7 +17,7 @@ document.getElementById('correct-code-btn').addEventListener('click', async func
 });
 
 async function getCorrectedCode(userCode) {
-    const apiKey = 'sk-proj-tUTpr6kDFkOJy7gR9dZST3BlbkFJeaJ0OV7tr5cDxsaoFPFh';
+    const apiKey = 'sk-proj-9R6kutDI5PoFHXKaHko5T3BlbkFJwhAW3qZkmdK8vSdtZIOq';
     const url = 'https://api.openai.com/v1/chat/completions';
 
     const response = await fetch(url, {
