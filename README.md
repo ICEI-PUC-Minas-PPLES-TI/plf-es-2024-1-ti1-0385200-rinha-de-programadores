@@ -1,6 +1,6 @@
 ## CODE CLASH
 
-O principal objetivo do Code Clasht é transformar o aprendizado de programação em uma experiência envolvente e divertida, ao mesmo tempo que proporciona uma base sólida de conhecimentos técnicos. Ao integrar elementos de gamificação e aprendizagem interativa, a plataforma busca motivar os usuários a continuar aprimorando suas habilidades e alcançar a excelência na programação.
+O principal objetivo do Code Clash é transformar o aprendizado de programação em uma experiência envolvente e divertida, ao mesmo tempo que proporciona uma base sólida de conhecimentos técnicos. Ao integrar elementos de gamificação, aprendizagem interativa e feedback instantaneo, a plataforma busca motivar os usuários a continuar aprimorando suas habilidades e alcançar a excelência na programação.
 
 
 ## Alunos integrantes da equipe
