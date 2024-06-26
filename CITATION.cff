@@ -1,31 +1,28 @@
 <<<<<<< HEAD
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Code Clash
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: do Prado Chaves
+    given-names: Eliseu
+  - family-names: Dantas Gomes Leite
+    given-names: Fernando
+  - family-names: Araujo Santos
+    given-names: Mateus 
+  - family-names: Costa Vianna
+    given-names: Vitor
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
+    family-names: Barbosa da Fonseca
+    given-names: Gabriel 
+  - name-suffix: Professor(a)
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Hanne Soares de Andrade 
+    given-names: Michelle 
 keywords:
-  - 
-  - 
+  - desafios
+  - quiz
+  - Feedback imediato
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
@@ -33,32 +30,28 @@ date-released: 2022-07-14
 =======
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Code Clash
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: do Prado Chaves
+    given-names: Eliseu
+  - family-names: Dantas Gomes Leite
+    given-names: Fernando
+  - family-names: Araujo Santos
+    given-names: Mateus 
+  - family-names: Costa Vianna
+    given-names: Vitor
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
+    family-names: Barbosa da Fonseca
+    given-names: Gabriel 
+  - name-suffix: Professor(a)
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Hanne Soares de Andrade 
+    given-names: Michelle 
 keywords:
-  - 
-  - 
-repository-code: 
+  - desafios
+  - quiz
+  - Feedback imediatorepository-code: 
 license: CC-BY-4.0
 version: 1.0.0
 date-released: 2022-07-14
